@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TMT Engenharia Elétrica | Projetos elétricos, subestações, painéis e perícias</title>
+<meta name="description" content="TMT Engenharia, em Cascavel/PR, atende todo o Brasil com projetos elétricos, subestações, painéis de comando e potência, automação residencial, perícias e vistorias.">
+<meta name="theme-color" content="#0F2A5A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TMT Engenharia Elétrica">
+<meta property="og:description" content="Projetos elétricos, subestações, painéis de comando e perícias, com atendimento direto do engenheiro responsável.">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+:root{--navy:#0F2A5A;--teal:#15A394;--light:#F3F7FA;--gray:#4A5568;--line:#D5DEE6}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Roboto,Arial,sans-serif;color:var(--gray);line-height:1.6;background:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:13px 24px;border-radius:6px;font-size:15px;border:0}
+.btn:hover{background:#0f8c7f}
+section{padding:64px 0;scroll-margin-top:56px}
+.dark{background:var(--navy);color:#dbe6f3}
+.tint{background:#E3F3F0}
+.lt{background:var(--light)}
+h2{color:var(--navy);font-size:30px;line-height:1.2;margin-bottom:10px}
+.dark h2{color:#fff}
+.eyebrow{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:8px}
+.dark .eyebrow{color:#9FE3DA}
+.lead{max-width:680px;margin-bottom:32px}
+
+/* MENU */
+.nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.nav .brand{color:#fff;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.nav .brand span{color:#5FE0CC}
+.nav ul{list-style:none;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a.l{color:#cfe3f3;font-size:14px;font-weight:600;white-space:nowrap}
+.nav a.l:hover{color:#fff}
+
+/* TOPO */
+.hero{background:var(--navy);color:#fff;padding:72px 0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-90px;bottom:-110px;width:340px;height:340px;border-radius:50%;background:var(--teal);opacity:.35}
+.hero .wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
+.hero .txt{flex:1 1 380px}
+.hero h1{font-size:40px;line-height:1.15;margin-bottom:16px}
+.hero p{color:#cfe3f3;font-size:18px;margin-bottom:26px}
+.hero .logo{flex:0 1 260px;background:#fff;border-radius:10px;padding:18px}
+
+/* GRADES E CARTOES */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.stat{background:#17407F;border-top:4px solid var(--teal);padding:24px;border-radius:4px}
+.stat b{display:block;font-size:52px;color:#5FE0CC;line-height:1}
+.stat span{color:#fff;font-size:15px}
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);padding:22px;border-radius:4px}
+.card h3{color:var(--navy);font-size:17px;margin-bottom:6px}
+.card small{color:var(--teal);font-weight:700;font-size:13px}
+.steps{counter-reset:s}
+.steps .card{position:relative;padding-top:38px}
+.steps .card:before{counter-increment:s;content:"0" counter(s);position:absolute;top:10px;left:22px;color:var(--teal);font-weight:800}
+
+/* PROJETOS */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-bottom:56px}
+.proj figure{background:#fff;border:1px solid var(--line);box-shadow:8px 8px 0 var(--teal);padding:8px}
+.proj h3{color:var(--navy);font-size:24px;margin-bottom:8px}
+.ficha{margin:14px 0;font-size:14px}
+.ficha div{display:flex;gap:10px;border-bottom:1px solid var(--line);padding:6px 0}
+.ficha b{flex:0 0 120px;color:var(--teal);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding-top:2px}
+.ficha span{color:var(--navy)}
+.proj ul{padding-left:18px;font-size:14px;color:var(--navy)}
+
+/* RESPONSAVEL TECNICO */
+.rt{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.rt .foto{width:190px;height:190px;border-radius:50%;border:5px solid var(--teal);overflow:hidden;background:#fff;flex:0 0 auto}
+.rt .foto img{width:100%;height:100%;object-fit:cover}
+.rt .t{max-width:760px}
+.crea{display:inline-block;margin-top:6px;background:var(--teal);color:#fff;font-weight:700;font-size:14px;letter-spacing:1px;padding:5px 14px;border-radius:4px}
+
+/* CONTATO */
+.contact a.row,.contact div.row{display:block;margin:10px 0}
+.contact b{display:block;color:#9FE3DA;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.contact span{color:#fff;font-size:20px;overflow-wrap:anywhere}
+details{background:#fff;border:1px solid var(--line);border-radius:4px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700;color:var(--navy)}
+details p{margin-top:8px;color:#000}
+footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align:center}
+
+/* CELULAR */
+@media(max-width:760px){
+  .proj{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .hero{padding:48px 0}
+  .hero h1{font-size:30px}
+  .hero p{font-size:16px}
+  .hero .logo{flex:0 0 auto;width:200px;padding:14px}
+  h2{font-size:25px}
+  section{padding:48px 0}
+  .nav .brand{font-size:15px}
+}
+@media(max-width:480px){
+  .hero .btn,.contact .btn{display:block;text-align:center}
+  .contact span{font-size:17px}
+  .ficha div{flex-direction:column;gap:0}
+  .ficha b{flex:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio">TMT <span>Engenharia</span></a>
+    <ul>
+      <li><a class="l" href="#servicos">Serviços</a></li>
+      <li><a class="l" href="#projetos">Projetos</a></li>
+      <li><a class="l" href="#sobre">Sobre</a></li>
+      <li><a class="l" href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div class="txt">
+      <h1>Parceria que conecta, tecnologia que movimenta.</h1>
+      <p>Projetos elétricos, subestações, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
+      <a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a>
+    </div>
+    <div class="logo"><img src="assets/logo.png" width="380" height="380" alt="TMT Engenharia"></div>
+  </div>
+</header>
+
+<section class="dark" id="numeros">
+  <div class="wrap">
+    <div class="eyebrow">Resultados em números</div>
+    <h2>Experiência em projetos de todos os portes</h2>
+    <p class="lead">Projetos concluídos, além dos cases apresentados neste site.</p>
+    <div class="grid g4">
+      <div class="stat"><b>6</b><span>Projetos de instalação elétrica predial</span></div>
+      <div class="stat"><b>3</b><span>Projetos elétricos industriais</span></div>
+      <div class="stat"><b>2</b><span>Painéis de comando</span></div>
+      <div class="stat"><b>21</b><span>Perícias e vistorias</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="tint" id="servicos">
+  <div class="wrap">
+    <div class="eyebrow">Serviços</div>
+    <h2>Soluções em engenharia elétrica</h2>
+    <p class="lead">Atuamos em projeto e fiscalização, cobrindo desde instalações prediais até subestações e painéis de média e baixa tensão.</p>
+    <div class="grid g3">
+      <div class="card"><small>01</small><h3>Instalações elétricas</h3>Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.</div>
+      <div class="card"><small>02</small><h3>Elétrica industrial</h3>Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.</div>
+      <div class="card"><small>03</small><h3>Subestações</h3>Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.</div>
+      <div class="card"><small>04</small><h3>Automação residencial</h3>Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div>
+      <div class="card"><small>05</small><h3>Painéis de comando e potência</h3>Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div>
+      <div class="card"><small>06</small><h3>Perícias e vistorias</h3>Laudos e inspeções técnicas para verificar conformidade, causas de falhas e regularização.</div>
+      <div class="card"><small>07</small><h3>Consultorias</h3>Apoio técnico para decisões, adequações, ampliações e análise de projetos.</div>
+      <div class="card" style="background:var(--navy);border-top-color:var(--teal);color:#dbe6f3"><small>ESCOPO</small><h3 style="color:#fff">Projeto e fiscalização</h3>Acompanhamos a execução para garantir que a obra siga o que foi projetado.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projetos" style="padding-bottom:10px">
+  <div class="wrap">
+    <div class="eyebrow">Projetos</div>
+    <h2>Projetos selecionados</h2>
+    <p class="lead" style="margin-bottom:40px">Uma amostra de trabalhos da TMT. Por respeito à confidencialidade, os clientes não são identificados.</p>
+
+    <div><div class="proj">
+      <div>
+        <h3>Instalações elétricas de supermercado</h3>
+        <p>Projeto elétrico completo de edificação comercial, com iluminação, tomadas, distribuição e diagramas de quadros.</p>
+        <div class="ficha"><div><b>Região</b><span>Guarapuava/PR</span></div><div><b>Atuação</b><span>Projeto e fiscalização</span></div><div><b>Especialidade</b><span>Instalações elétricas comerciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+        <ul><li>Projeto em 8 pranchas formato A0</li><li>Plantas, notas, quadros de cargas e diagramas</li><li>Iluminação distribuída em malha na área de vendas</li></ul>
+      </div>
+      <figure><img src="assets/projeto-supermercado.jpg" width="900" height="636" loading="lazy" alt="Prancha do projeto elétrico de supermercado"></figure>
+    </div></div>
+
+    <div><div class="proj">
+      <div>
+        <h3>Edifício residencial de 4 pavimentos</h3>
+        <p>Projeto executivo das instalações elétricas de edifício residencial, com unidades autônomas, áreas comuns e esquema vertical.</p>
+        <div class="ficha"><div><b>Região</b><span>Dourados/MS</span></div><div><b>Atuação</b><span>Projeto e fiscalização</span></div><div><b>Especialidade</b><span>Instalações elétricas residenciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+        <ul><li>Projeto executivo em 4 pranchas formato A0</li><li>Planta por pavimento com apartamentos e circulação</li><li>Esquema vertical e quadro de circuitos</li></ul>
+      </div>
+      <figure><img src="assets/projeto-edificio.jpg" width="600" height="822" loading="lazy" alt="Planta do projeto elétrico do edifício residencial"></figure>
+    </div></div>
+
+    <div><div class="proj">
+      <div>
+        <h3>Subestação compacta 13,8 kV / 380 V</h3>
+        <p>Projeto de subestação compacta abrigada, com compartimentos de alta tensão, transformador e baixa tensão.</p>
+        <div class="ficha"><div><b>Região</b><span>Joinville/SC</span></div><div><b>Atuação</b><span>Projeto e fiscalização</span></div><div><b>Especialidade</b><span>Subestações em média tensão</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+        <ul><li>Transformador a óleo de 1.000 kVA</li><li>Banco de capacitores 6 × 300 kVAR em 380 V</li><li>Disjuntor geral de baixa tensão</li><li>Módulo de 3,12 m × 2,45 m</li></ul>
+      </div>
+      <figure><img src="assets/projeto-subestacao.jpg" width="900" height="636" loading="lazy" alt="Prancha do projeto da subestação compacta"></figure>
+    </div></div>
+
+    <div><div class="proj">
+      <div>
+        <h3>CCM e QGBT em painel de 4 colunas</h3>
+        <p>Projeto de painel de comando e potência que reúne centro de controle de motores (CCM) e quadro geral de baixa tensão (QGBT).</p>
+        <div class="ficha"><div><b>Região</b><span>Matelândia/PR</span></div><div><b>Atuação</b><span>Projeto e fiscalização</span></div><div><b>Especialidade</b><span>Painéis de comando e potência</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+        <ul><li>Dimensionado para até 650 kVA</li><li>Carga atual de 378 kVA, com folga para expansão</li><li>Disjuntores ABB Tmax e disjuntor aberto E3S</li><li>Painel de 3.300 × 2.200 mm</li></ul>
+      </div>
+      <figure><img src="assets/projeto-painel.jpg" width="900" height="636" loading="lazy" alt="Prancha do painel CCM e QGBT"></figure>
+    </div></div>
+  </div>
+</section>
+
+<section class="lt" id="sobre">
+  <div class="wrap">
+    <div class="eyebrow">Sobre a TMT</div>
+    <h2>Engenharia elétrica com proximidade e rigor técnico</h2>
+    <p class="lead">A TMT Engenharia é uma empresa de engenharia elétrica que nasceu da experiência de atuação em projetos elétricos e hoje se formaliza como empresa. Nossa estrutura enxuta é uma vantagem: cada projeto é conduzido de ponta a ponta pelo engenheiro responsável, do projeto à fiscalização, sem intermediários. Atendemos clientes residenciais, comerciais e industriais, de instalações prediais a subestações e painéis. Sediada em Cascavel/PR, atuamos em todo o Brasil.</p>
+    <div class="grid g4 steps">
+      <div class="card"><h3>Conversa inicial</h3>Entendemos sua necessidade e as características da obra.</div>
+      <div class="card"><h3>Projeto</h3>Desenvolvemos o projeto técnico com clareza e atenção às normas.</div>
+      <div class="card"><h3>Fiscalização</h3>Acompanhamos a execução para garantir fidelidade ao projeto.</div>
+      <div class="card"><h3>Entrega</h3>Documentação organizada e suporte para dúvidas.</div>
+    </div>
+    <div class="grid g4" style="margin-top:18px">
+      <div class="card"><h3>Segurança</h3>Instalações bem projetadas protegem pessoas e patrimônio.</div>
+      <div class="card"><h3>Clareza</h3>Projetos organizados e fáceis de executar.</div>
+      <div class="card"><h3>Proximidade</h3>Atendimento direto e transparente.</div>
+      <div class="card"><h3>Tecnologia</h3>Soluções atuais, aplicadas com critério.</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="responsavel">
+  <div class="wrap rt">
+    <div class="foto"><img src="assets/vitor.jpg" width="480" height="480" loading="lazy" alt="Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia"></div>
+    <div class="t">
+      <div class="eyebrow">Responsável técnico</div>
+      <h2>Vitor Thimóteo Daubermann</h2>
+      <p><b style="color:#fff">Engenheiro Eletrônico</b></p>
+      <span class="crea">CREA-PR 232367</span>
+      <p style="margin-top:12px">Vitor é o responsável técnico da TMT Engenharia e acompanha pessoalmente cada projeto. Atua em instalações elétricas prediais, elétrica industrial, subestações, painéis de comando e potência, automação residencial, perícias, vistorias e consultorias.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="dark" style="background:#0A1E42">
+  <div class="wrap contact">
+    <div class="eyebrow">Contato</div>
+    <h2>Vamos conversar sobre o seu projeto</h2>
+    <p class="lead">Conte o que você precisa e retornaremos o mais rápido possível. Atendemos todo o Brasil.</p>
+    <a class="row" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><b>WhatsApp</b><span>(45) 9 8823-9581</span></a>
+    <a class="row" href="https://www.instagram.com/tmt.engenhariaeletrica" target="_blank" rel="noopener"><b>Instagram</b><span>@tmt.engenhariaeletrica</span></a>
+    <a class="row" href="mailto:tmtengenhariaeletrica@gmail.com?subject=Or%C3%A7amento%20-%20TMT%20Engenharia"><b>E-mail</b><span>tmtengenhariaeletrica@gmail.com</span></a>
+    <div class="row"><b>Sede</b><span>Cascavel/PR · atendimento em todo o Brasil</span></div>
+    <p style="margin:22px 0 40px"><a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a></p>
+    <h2 style="font-size:22px">Perguntas frequentes</h2><br>
+    <details><summary>Atendem outras cidades e estados?</summary><p>Sim. Atuamos em todo o Brasil, com projetos feitos de forma remota e fiscalização conforme a necessidade da obra.</p></details>
+    <details><summary>O que preciso enviar para pedir um orçamento?</summary><p>Local da obra, tipo de serviço, planta arquitetônica (se houver) e uma breve descrição. Se ainda não tiver tudo, envie o que tiver e conversamos.</p></details>
+    <details><summary>Vocês fazem projeto e acompanham a obra?</summary><p>Sim. Nosso escopo é projeto e fiscalização.</p></details>
+    <details><summary>Fazem perícias e vistorias?</summary><p>Sim, em instalações elétricas, com emissão de laudo técnico.</p></details>
+    <details><summary>Os clientes aparecem no site?</summary><p>Não. Preservamos a confidencialidade e mostramos apenas região e características técnicas dos projetos.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">TMT Engenharia · Cascavel/PR · Responsável técnico: Vitor Thimóteo Daubermann · CREA-PR 232367</div>
+</footer>
+
+</body>
+</html>
