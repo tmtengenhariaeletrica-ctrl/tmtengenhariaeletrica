@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TMT Engenharia Elétrica | Projetos elétricos, subestações, painéis e perícias</title>
-<meta name="description" content="TMT Engenharia, em Cascavel/PR, atende todo o Brasil com projetos elétricos, subestações, painéis de comando e potência, automação residencial, perícias e vistorias.">
+<title>TMT Engenharia Elétrica | Projetos elétricos, subestações, SPDA, painéis e perícias</title>
+<meta name="description" content="TMT Engenharia, em Cascavel/PR, atende todo o Brasil com projetos elétricos, subestações, SPDA (para-raios), painéis de comando e potência, automação residencial, perícias e vistorias.">
 <meta name="theme-color" content="#0F2A5A">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TMT Engenharia Elétrica">
-<meta property="og:description" content="Projetos elétricos, subestações, painéis de comando e perícias, com atendimento direto do engenheiro responsável.">
+<meta property="og:description" content="Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável.">
 <meta property="og:image" content="assets/logo.png">
 <link rel="icon" type="image/png" href="assets/logo.png">
 <style>
@@ -57,6 +57,13 @@ h2{color:var(--navy);font-size:30px;line-height:1.2;margin-bottom:10px}
 .stat{background:#17407F;border-top:4px solid var(--teal);padding:24px;border-radius:4px}
 .stat b{display:block;font-size:52px;color:#5FE0CC;line-height:1}
 .stat span{color:#fff;font-size:15px}
+.total{display:flex;gap:32px;align-items:center;flex-wrap:wrap;background:#17407F;border-top:4px solid var(--teal);border-radius:4px;padding:32px}
+.total .n{font-size:110px;font-weight:800;color:#5FE0CC;line-height:1}
+.total .t{flex:1 1 280px}
+.total .t strong{display:block;color:#fff;font-size:24px;line-height:1.25;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:rgba(255,255,255,.12);color:#fff;font-size:14px;padding:6px 14px;border-radius:999px}
+.chips b{color:#5FE0CC}
 .card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);padding:22px;border-radius:4px}
 .card h3{color:var(--navy);font-size:17px;margin-bottom:6px}
 .card small{color:var(--teal);font-weight:700;font-size:13px}
@@ -102,6 +109,9 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   .nav .brand{font-size:15px}
 }
 @media(max-width:480px){
+  .total{padding:24px}
+  .total .n{font-size:80px}
+  .total .t strong{font-size:20px}
   .hero .btn,.contact .btn{display:block;text-align:center}
   .contact span{font-size:17px}
   .ficha div{flex-direction:column;gap:0}
@@ -127,7 +137,7 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   <div class="wrap">
     <div class="txt">
       <h1>Parceria que conecta, tecnologia que movimenta.</h1>
-      <p>Projetos elétricos, subestações, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
+      <p>Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
       <a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a>
     </div>
     <div class="logo"><img src="assets/logo.png" width="380" height="380" alt="TMT Engenharia"></div>
@@ -139,11 +149,17 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
     <div class="eyebrow">Resultados em números</div>
     <h2>Experiência em projetos de todos os portes</h2>
     <p class="lead">Projetos concluídos, além dos cases apresentados neste site.</p>
-    <div class="grid g4">
-      <div class="stat"><b>6</b><span>Projetos de instalação elétrica predial</span></div>
-      <div class="stat"><b>3</b><span>Projetos elétricos industriais</span></div>
-      <div class="stat"><b>2</b><span>Painéis de comando</span></div>
-      <div class="stat"><b>21</b><span>Perícias e vistorias</span></div>
+    <div class="total">
+      <div class="n">32</div>
+      <div class="t">
+        <strong>trabalhos técnicos entregues, entre projetos, painéis, perícias e vistorias</strong>
+        <div class="chips">
+          <span><b>6</b> instalações elétricas prediais</span>
+          <span><b>3</b> projetos industriais</span>
+          <span><b>2</b> painéis de comando</span>
+          <span><b>21</b> perícias e vistorias</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -157,10 +173,11 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
       <div class="card"><small>01</small><h3>Instalações elétricas</h3>Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.</div>
       <div class="card"><small>02</small><h3>Elétrica industrial</h3>Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.</div>
       <div class="card"><small>03</small><h3>Subestações</h3>Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.</div>
-      <div class="card"><small>04</small><h3>Automação residencial</h3>Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div>
-      <div class="card"><small>05</small><h3>Painéis de comando e potência</h3>Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div>
-      <div class="card"><small>06</small><h3>Perícias e vistorias</h3>Laudos e inspeções técnicas para verificar conformidade, causas de falhas e regularização.</div>
-      <div class="card"><small>07</small><h3>Consultorias</h3>Apoio técnico para decisões, adequações, ampliações e análise de projetos.</div>
+      <div class="card"><small>04</small><h3>SPDA (para-raios)</h3>Projeto de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, conforme a NBR 5419.</div>
+      <div class="card"><small>05</small><h3>Automação residencial</h3>Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div>
+      <div class="card"><small>06</small><h3>Painéis de comando e potência</h3>Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div>
+      <div class="card"><small>07</small><h3>Perícias e vistorias</h3>Laudos e inspeções técnicas para verificar conformidade, causas de falhas e regularização.</div>
+      <div class="card"><small>08</small><h3>Consultorias</h3>Apoio técnico para decisões, adequações, ampliações e análise de projetos.</div>
       <div class="card" style="background:var(--navy);border-top-color:var(--teal);color:#dbe6f3"><small>ESCOPO</small><h3 style="color:#fff">Projeto e fiscalização</h3>Acompanhamos a execução para garantir que a obra siga o que foi projetado.</div>
     </div>
   </div>
@@ -211,6 +228,16 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
       </div>
       <figure><img src="assets/projeto-painel.jpg" width="900" height="636" loading="lazy" alt="Prancha do painel CCM e QGBT"></figure>
     </div></div>
+
+    <div><div class="proj">
+      <div>
+        <h3>SPDA de edifício de 11 pavimentos</h3>
+        <p>Projeto de proteção contra descargas atmosféricas de edifício de 11 pavimentos, com captação, descidas pela estrutura, equipotencialização e prancha de detalhamento.</p>
+        <div class="ficha"><div><b>Região</b><span>Cascavel/PR</span></div><div><b>Atuação</b><span>Projeto</span></div><div><b>Especialidade</b><span>SPDA (para-raios)</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+        <ul><li>Projeto em 7 pranchas formato A0, com prancha de detalhamento</li><li>Para-raios tipo Franklin em mastro de 6 m, com sinalizador noturno</li><li>Descidas pelo vergalhão (CA-25) das estruturas e aterramento nos pilares</li><li>Anel de equipotencialização e caixa de equalização (LEP/TAP) ligada a elevadores, incêndio e gás</li></ul>
+      </div>
+      <figure><img src="assets/projeto-spda.jpg" width="900" height="636" loading="lazy" alt="Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares"></figure>
+    </div></div>
   </div>
 </section>
 
@@ -242,7 +269,7 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
       <h2>Vitor Thimóteo Daubermann</h2>
       <p><b style="color:#fff">Engenheiro Eletrônico</b></p>
       <span class="crea">CREA-PR 232367</span>
-      <p style="margin-top:12px">Vitor é o responsável técnico da TMT Engenharia e acompanha pessoalmente cada projeto. Atua em instalações elétricas prediais, elétrica industrial, subestações, painéis de comando e potência, automação residencial, perícias, vistorias e consultorias.</p>
+      <p style="margin-top:12px">Vitor é o responsável técnico da TMT Engenharia e acompanha pessoalmente cada projeto. Atua em instalações elétricas prediais, elétrica industrial, subestações, SPDA, painéis de comando e potência, automação residencial, perícias, vistorias e consultorias.</p>
     </div>
   </div>
 </section>
@@ -261,6 +288,7 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
     <details><summary>Atendem outras cidades e estados?</summary><p>Sim. Atuamos em todo o Brasil, com projetos feitos de forma remota e fiscalização conforme a necessidade da obra.</p></details>
     <details><summary>O que preciso enviar para pedir um orçamento?</summary><p>Local da obra, tipo de serviço, planta arquitetônica (se houver) e uma breve descrição. Se ainda não tiver tudo, envie o que tiver e conversamos.</p></details>
     <details><summary>Vocês fazem projeto e acompanham a obra?</summary><p>Sim. Nosso escopo é projeto e fiscalização.</p></details>
+    <details><summary>Fazem projeto de SPDA (para-raios)?</summary><p>Sim. Projetamos o sistema de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, para edifícios residenciais, comerciais e industriais.</p></details>
     <details><summary>Fazem perícias e vistorias?</summary><p>Sim, em instalações elétricas, com emissão de laudo técnico.</p></details>
     <details><summary>Os clientes aparecem no site?</summary><p>Não. Preservamos a confidencialidade e mostramos apenas região e características técnicas dos projetos.</p></details>
   </div>
