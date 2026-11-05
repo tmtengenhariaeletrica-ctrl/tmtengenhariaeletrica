@@ -1,4 +1,4 @@
-a<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="pt-BR">
 <head>
@@ -357,6 +357,35 @@ section.dark > .wrap > h2 {
   color: #FFFFFF !important;
 }
 #servicos .scope-card small { color: #BDF6EC !important; }
+
+
+/* AJUSTE DE ESPAÇAMENTO ENTRE AVALIAÇÕES E CONTATO
+   Reduz somente o respiro dessas duas seções, sem limitar/cortar o widget do Google. */
+#avaliacoes {
+  padding-top: 64px !important;
+  padding-bottom: 24px !important;
+}
+#avaliacoes .lead {
+  margin-bottom: 20px !important;
+}
+#avaliacoes .elfsight-app-f1d5e788-32c8-4ea9-adb0-815481439b15 {
+  margin-bottom: 0 !important;
+}
+#contato {
+  padding-top: 48px !important;
+}
+@media (max-width: 760px) {
+  #avaliacoes {
+    padding-top: 40px !important;
+    padding-bottom: 18px !important;
+  }
+  #avaliacoes .lead {
+    margin-bottom: 14px !important;
+  }
+  #contato {
+    padding-top: 32px !important;
+  }
+}
 
 </style>
 </head>
@@ -875,20 +904,4 @@ section.dark > .wrap > h2 {
     b.type = 'button'; b.dataset.lang = l; b.title = FLAGS[l][0];
     b.setAttribute('aria-label', FLAGS[l][0]); b.setAttribute('aria-pressed', 'false');
     b.innerHTML = FLAGS[l][1];
-    b.addEventListener('click', function () { setLang(l); });
-    box.appendChild(b);
-  });
-  q('.nav .wrap').insertBefore(box, q('.nav .menu-btn'));
-
-  // Idioma inicial: ?lang=en na URL, senão o último escolhido, senão português
-  var start = 'pt';
-  try {
-    var u = new URLSearchParams(location.search).get('lang');
-    var s = localStorage.getItem('tmt-lang');
-    start = (u && FLAGS[u]) ? u : (s && FLAGS[s]) ? s : 'pt';
-  } catch (e) {}
-  setLang(start);
-})();
-</script>
-<script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body>
-</html>
+    b.addEventListener('click', function () {
