@@ -40,6 +40,9 @@ h2{color:var(--navy);font-size:30px;line-height:1.2;margin-bottom:10px}
 .nav ul::-webkit-scrollbar{display:none}
 .nav a.l{color:#cfe3f3;font-size:14px;font-weight:600;white-space:nowrap}
 .nav a.l:hover{color:#fff}
+.menu-btn{display:none;flex:none;width:40px;height:40px;padding:7px;border:0;background:none;color:#cfe3f3;cursor:pointer;border-radius:6px}
+.menu-btn:hover,.nav.open .menu-btn{color:#fff;background:rgba(255,255,255,.1)}
+.menu-btn svg{display:block;width:100%;height:100%;fill:currentColor}
 
 /* TOPO */
 .hero{background:var(--navy);color:#fff;padding:72px 0;position:relative;overflow:hidden}
@@ -107,6 +110,11 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   h2{font-size:25px}
   section{padding:48px 0}
   .nav .brand{font-size:15px}
+  .menu-btn{display:block}
+  .nav .wrap>ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;overflow:visible;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 10px 20px rgba(0,0,0,.25)}
+  .nav.open .wrap>ul{display:flex}
+  .nav ul li+li{border-top:1px solid rgba(255,255,255,.08)}
+  .nav a.l{display:block;padding:15px 20px;font-size:16px}
 }
 @media(max-width:480px){
   .total{padding:24px}
@@ -124,13 +132,14 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
 <nav class="nav">
   <div class="wrap">
     <a class="brand" href="#inicio">TMT <span>Engenharia Elétrica</span></a> 
-    <ul>
+    <ul id="menu-links">
       <li><a class="l" href="#servicos">Serviços</a></li>
       <li><a class="l" href="#projetos">Projetos</a></li>
       <li><a class="l" href="#sobre">Sobre</a></li>
       <li><a class="l" href="#avaliacoes">Avaliações</a></li>
       <li><a class="l" href="#contato">Contato</a></li>
     </ul>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu-links"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="4" cy="18" r="2"/><rect x="9" y="5" width="13" height="2" rx="1"/><rect x="9" y="11" width="13" height="2" rx="1"/><rect x="9" y="17" width="13" height="2" rx="1"/></svg></button>
   </div>
 </nav>
 
@@ -313,7 +322,22 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
 </footer>
 
 <script>
-/* TMT Engenharia - seletor de idioma (PT-BR base, EN, ES) */
+(function(){
+  var nav=document.querySelector('.nav'),btn=document.querySelector('.menu-btn');
+  function set(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false')}
+  btn.addEventListener('click',function(e){e.stopPropagation();set(!nav.classList.contains('open'))});
+  Array.prototype.forEach.call(nav.querySelectorAll('ul a'),function(a){a.addEventListener('click',function(){set(false)})});
+  document.addEventListener('click',function(e){if(!nav.contains(e.target))set(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>760)set(false)});
+})();
+</script>
+
+<script>
+/* TMT Engenharia - seletor de idioma (PT-BR base, EN, ES)
+   Este arquivo e JavaScript puro: salve como assets/idiomas.js e NAO cole no index.html.
+   Cada linha de D é [português, inglês, espanhol]. O português precisa ser
+   igual ao texto do HTML. Se editar um texto no site, edite a linha aqui. */
 (function () {
   var D = [
     // Menu
@@ -607,7 +631,7 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
     b.addEventListener('click', function () { setLang(l); });
     box.appendChild(b);
   });
-  q('.nav .wrap').appendChild(box);
+  q('.nav .wrap').insertBefore(box, q('.nav .menu-btn'));
 
   // Idioma inicial: ?lang=en na URL, senão o último escolhido, senão português
   var start = 'pt';
