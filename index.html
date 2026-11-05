@@ -1,316 +1,308 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TMT Engenharia Elétrica | Projetos elétricos, subestações, SPDA, painéis e perícias</title>
-<meta name="description" content="TMT Engenharia, em Cascavel/PR, atende todo o Brasil com projetos elétricos, subestações, SPDA (para-raios), painéis de comando e potência, automação residencial, perícias e vistorias.">
-<meta name="theme-color" content="#0F2A5A">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TMT Engenharia Elétrica">
-<meta property="og:description" content="Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável.">
-<meta property="og:image" content="assets/logo.png">
-<link rel="icon" type="image/png" href="assets/logo.png">
-<style>
-:root{--navy:#0F2A5A;--teal:#15A394;--light:#F3F7FA;--gray:#4A5568;--line:#D5DEE6}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',Roboto,Arial,sans-serif;color:var(--gray);line-height:1.6;background:#fff}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.btn{display:inline-block;background:var(--teal);color:#fff;font-weight:700;padding:13px 24px;border-radius:6px;font-size:15px;border:0}
-.btn:hover{background:#0f8c7f}
-section{padding:64px 0;scroll-margin-top:56px}
-.dark{background:var(--navy);color:#dbe6f3}
-.tint{background:#E3F3F0}
-.lt{background:var(--light)}
-h2{color:var(--navy);font-size:30px;line-height:1.2;margin-bottom:10px}
-.dark h2{color:#fff}
-.eyebrow{color:var(--teal);font-weight:700;letter-spacing:3px;font-size:12px;text-transform:uppercase;margin-bottom:8px}
-.dark .eyebrow{color:#9FE3DA}
-.lead{max-width:680px;margin-bottom:32px}
+/* TMT Engenharia - seletor de idioma (PT-BR base, EN, ES)
+   Uso: <script src="assets/idiomas.js"></script> antes de </body>.
+   Cada linha de D é [português, inglês, espanhol]. O português precisa ser
+   igual ao texto do HTML. Se editar um texto no site, edite a linha aqui. */
+(function () {
+  var D = [
+    // Menu
+    [`Serviços`, `Services`, `Servicios`],
+    [`Projetos`, `Projects`, `Proyectos`],
+    [`Sobre`, `About`, `Nosotros`],
+    [`Avaliações`, `Reviews`, `Opiniones`],
+    [`Contato`, `Contact`, `Contacto`],
+    [`Engenharia Elétrica`, `Electrical Engineering`, `Ingeniería Eléctrica`],
 
-/* MENU */
-.nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
-.nav .brand{color:#fff;font-weight:800;letter-spacing:.5px;white-space:nowrap}
-.nav .brand span{color:#5FE0CC}
-.nav ul{list-style:none;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
-.nav ul::-webkit-scrollbar{display:none}
-.nav a.l{color:#cfe3f3;font-size:14px;font-weight:600;white-space:nowrap}
-.nav a.l:hover{color:#fff}
+    // Topo
+    [`Parceria que conecta, tecnologia que movimenta.`, `Partnership that connects, technology that moves.`, `Alianzas que conectan, tecnología que mueve.`],
+    [`Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.`,
+     `Electrical design, substations, lightning protection (SPDA), control panels and expert inspections, with direct service from the engineer in charge. Based in Cascavel/PR and working across Brazil.`,
+     `Proyectos eléctricos, subestaciones, SPDA (pararrayos), tableros de control y peritajes, con atención directa del ingeniero responsable. Con sede en Cascavel/PR y presencia en todo Brasil.`],
+    [`Solicitar orçamento pelo WhatsApp`, `Request a quote on WhatsApp`, `Solicitar presupuesto por WhatsApp`],
 
-/* TOPO */
-.hero{background:var(--navy);color:#fff;padding:72px 0;position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;right:-90px;bottom:-110px;width:340px;height:340px;border-radius:50%;background:var(--teal);opacity:.35}
-.hero .wrap{display:flex;gap:40px;align-items:center;flex-wrap:wrap;position:relative;z-index:1}
-.hero .txt{flex:1 1 380px}
-.hero h1{font-size:40px;line-height:1.15;margin-bottom:16px}
-.hero p{color:#cfe3f3;font-size:18px;margin-bottom:26px}
-.hero .logo{flex:0 1 260px;background:#fff;border-radius:10px;padding:18px}
+    // Números
+    [`Resultados em números`, `Results in numbers`, `Resultados en cifras`],
+    [`Experiência em projetos de todos os portes`, `Experience in projects of every size`, `Experiencia en proyectos de todos los tamaños`],
+    [`Projetos concluídos, além dos cases apresentados neste site.`, `Completed projects, in addition to the cases featured on this site.`, `Proyectos concluidos, además de los casos presentados en este sitio.`],
+    [`trabalhos técnicos entregues, entre projetos, painéis, perícias e vistorias`, `technical jobs delivered, including designs, panels, expert reports and inspections`, `trabajos técnicos entregados, entre proyectos, tableros, peritajes e inspecciones`],
+    [`instalações elétricas prediais`, `building electrical installations`, `instalaciones eléctricas de edificios`],
+    [`Projetos SPDA`, `SPDA projects`, `Proyectos de SPDA`],
+    [`projetos industriais`, `industrial projects`, `proyectos industriales`],
+    [`painéis de comando`, `control panels`, `tableros de control`],
+    [`perícias e vistorias`, `expert reports and inspections`, `peritajes e inspecciones`],
 
-/* GRADES E CARTOES */
-.grid{display:grid;gap:18px}
-.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.stat{background:#17407F;border-top:4px solid var(--teal);padding:24px;border-radius:4px}
-.stat b{display:block;font-size:52px;color:#5FE0CC;line-height:1}
-.stat span{color:#fff;font-size:15px}
-.total{display:flex;gap:32px;align-items:center;flex-wrap:wrap;background:#17407F;border-top:4px solid var(--teal);border-radius:4px;padding:32px}
-.total .n{font-size:110px;font-weight:800;color:#5FE0CC;line-height:1}
-.total .t{flex:1 1 280px}
-.total .t strong{display:block;color:#fff;font-size:24px;line-height:1.25;margin-bottom:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{background:rgba(255,255,255,.12);color:#fff;font-size:14px;padding:6px 14px;border-radius:999px}
-.chips b{color:#5FE0CC}
-.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--teal);padding:22px;border-radius:4px}
-.card h3{color:var(--navy);font-size:17px;margin-bottom:6px}
-.card small{color:var(--teal);font-weight:700;font-size:13px}
-.steps{counter-reset:s}
-.steps .card{position:relative;padding-top:38px}
-.steps .card:before{counter-increment:s;content:"0" counter(s);position:absolute;top:10px;left:22px;color:var(--teal);font-weight:800}
+    // Serviços
+    [`Soluções em engenharia elétrica`, `Electrical engineering solutions`, `Soluciones en ingeniería eléctrica`],
+    [`Atuamos em projeto, perícias e vistorias, cobrindo desde instalações prediais até subestações e painéis de média e baixa tensão.`,
+     `We work on design, expert reports and inspections, from building installations to substations and medium- and low-voltage panels.`,
+     `Actuamos en proyectos, peritajes e inspecciones, desde instalaciones en edificios hasta subestaciones y tableros de media y baja tensión.`],
+    [`Instalações elétricas`, `Electrical installations`, `Instalaciones eléctricas`],
+    [`Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.`,
+     `Designs for homes, buildings and commercial establishments, with floor plans, diagrams, load schedules and technical specifications.`,
+     `Proyectos para viviendas, edificios y establecimientos comerciales, con planos, diagramas, cuadros de cargas y memoria descriptiva.`],
+    [`Elétrica industrial`, `Industrial electrical`, `Eléctrica industrial`],
+    [`Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.`,
+     `Designs for industrial plants and processes, focused on safety, operational continuity and maintenance.`,
+     `Proyectos para plantas y procesos industriales, pensados para la seguridad, la continuidad operativa y el mantenimiento.`],
+    [`Subestações`, `Substations`, `Subestaciones`],
+    [`Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.`,
+     `Medium-voltage substation design, including transformer, protection, metering and power factor correction.`,
+     `Proyecto de subestaciones de media tensión, con transformador, protección, medición y corrección del factor de potencia.`],
+    [`SPDA (para-raios)`, `SPDA (lightning protection)`, `SPDA (pararrayos)`],
+    [`Projeto de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, conforme a NBR 5419.`,
+     `Lightning protection system design, with air terminals, down conductors, grounding and equipotential bonding, in accordance with NBR 5419.`,
+     `Proyecto de protección contra descargas atmosféricas, con captación, bajadas, puesta a tierra y equipotencialización, conforme a la NBR 5419.`],
+    [`Automação residencial`, `Home automation`, `Automatización residencial`],
+    [`Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.`,
+     `Home automation design, integrating lighting, scenes and control in a practical and safe way.`,
+     `Proyecto de automatización para viviendas, integrando iluminación, escenas y control de forma práctica y segura.`],
+    [`Painéis de comando e potência`, `Control and power panels`, `Tableros de control y potencia`],
+    [`Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.`,
+     `Design of MCCs, LV main switchboards (QGBT) and distribution boards, with layout, sizing and component specification.`,
+     `Proyecto de CCM, QGBT y tableros de distribución, con layout, dimensionamiento y especificación de los componentes.`],
+    [`Perícias e vistorias`, `Expert reports and inspections`, `Peritajes e inspecciones`],
+    [`Laudos e inspeções técnicas para verificar conformidade, causas de falhas e regularização.`,
+     `Technical reports and inspections to verify compliance, identify causes of failures and support regularization.`,
+     `Informes e inspecciones técnicas para verificar la conformidad, las causas de fallas y la regularización.`],
+    [`Consultorias`, `Consulting`, `Consultorías`],
+    [`Apoio técnico para decisões, adequações, ampliações e análise de projetos.`,
+     `Technical support for decisions, upgrades, expansions and design review.`,
+     `Apoyo técnico para decisiones, adecuaciones, ampliaciones y análisis de proyectos.`],
+    [`ESCOPO`, `SCOPE`, `ALCANCE`],
+    [`Projetos e avaliações técnicas`, `Design and technical assessments`, `Proyectos y evaluaciones técnicas`],
+    [`A TMT Engenharia atua no desenvolvimento de projetos elétricos e na realização de vistorias e perícias técnicas, avaliando as condições das instalações, sua conformidade com as normas aplicáveis e possíveis causas de falhas.`,
+     `TMT Engenharia develops electrical designs and carries out technical inspections and expert reports, assessing the condition of installations, their compliance with applicable standards and the possible causes of failures.`,
+     `TMT Engenharia desarrolla proyectos eléctricos y realiza inspecciones y peritajes técnicos, evaluando el estado de las instalaciones, su conformidad con las normas aplicables y las posibles causas de fallas.`],
 
-/* PROJETOS */
-.proj{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-bottom:56px}
-.proj figure{background:#fff;border:1px solid var(--line);box-shadow:8px 8px 0 var(--teal);padding:8px}
-.proj h3{color:var(--navy);font-size:24px;margin-bottom:8px}
-.ficha{margin:14px 0;font-size:14px}
-.ficha div{display:flex;gap:10px;border-bottom:1px solid var(--line);padding:6px 0}
-.ficha b{flex:0 0 120px;color:var(--teal);font-size:11px;letter-spacing:2px;text-transform:uppercase;padding-top:2px}
-.ficha span{color:var(--navy)}
-.proj ul{padding-left:18px;font-size:14px;color:var(--navy)}
+    // Projetos
+    [`Projetos selecionados`, `Selected projects`, `Proyectos seleccionados`],
+    [`Uma amostra de trabalhos da TMT. Por respeito à confidencialidade, os clientes não são identificados.`,
+     `A sample of TMT's work. Out of respect for confidentiality, clients are not identified.`,
+     `Una muestra de trabajos de TMT. Por respeto a la confidencialidad, no se identifica a los clientes.`],
+    [`Região`, `Region`, `Región`],
+    [`Atuação`, `Role`, `Actuación`],
+    [`Especialidade`, `Specialty`, `Especialidad`],
+    [`Cliente`, `Client`, `Cliente`],
+    [`Confidencial`, `Confidential`, `Confidencial`],
+    [`Projeto e vistoria`, `Design and inspection`, `Proyecto e inspección`],
+    [`Projeto`, `Design`, `Proyecto`],
 
-/* RESPONSAVEL TECNICO */
-.rt{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
-.rt .foto{width:190px;height:190px;border-radius:50%;border:5px solid var(--teal);overflow:hidden;background:#fff;flex:0 0 auto}
-.rt .foto img{width:100%;height:100%;object-fit:cover}
-.rt .t{max-width:760px}
-.crea{display:inline-block;margin-top:6px;background:var(--teal);color:#fff;font-weight:700;font-size:14px;letter-spacing:1px;padding:5px 14px;border-radius:4px}
+    [`Instalações elétricas de supermercado`, `Supermarket electrical installations`, `Instalaciones eléctricas de supermercado`],
+    [`Projeto elétrico completo de edificação comercial, com iluminação, tomadas, distribuição e diagramas de quadros.`,
+     `Complete electrical design for a commercial building, with lighting, outlets, distribution and panel diagrams.`,
+     `Proyecto eléctrico completo de edificación comercial, con iluminación, tomacorrientes, distribución y diagramas de tableros.`],
+    [`Instalações elétricas comerciais`, `Commercial electrical installations`, `Instalaciones eléctricas comerciales`],
+    [`Projeto em 8 pranchas formato A0`, `Design on 8 A0 sheets`, `Proyecto en 8 láminas formato A0`],
+    [`Plantas, notas, quadros de cargas e diagramas`, `Floor plans, notes, load schedules and diagrams`, `Planos, notas, cuadros de cargas y diagramas`],
+    [`Iluminação distribuída em malha na área de vendas`, `Grid-distributed lighting across the sales floor`, `Iluminación distribuida en malla en el área de ventas`],
+    [`Prancha do projeto elétrico de supermercado`, `Sheet from the supermarket electrical design`, `Lámina del proyecto eléctrico de supermercado`],
 
-/* CONTATO */
-.contact a.row,.contact div.row{display:block;margin:10px 0}
-.contact b{display:block;color:#9FE3DA;font-size:11px;letter-spacing:2px;text-transform:uppercase}
-.contact span{color:#fff;font-size:20px;overflow-wrap:anywhere}
-details{background:#fff;border:1px solid var(--line);border-radius:4px;padding:14px 18px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;color:var(--navy)}
-details p{margin-top:8px;color:#000}
-footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align:center}
+    [`Edifício residencial de 4 pavimentos`, `4-story residential building`, `Edificio residencial de 4 pisos`],
+    [`Projeto executivo das instalações elétricas de edifício residencial, com unidades autônomas, áreas comuns e esquema vertical.`,
+     `Detailed electrical design for a residential building, with individual units, common areas and riser diagram.`,
+     `Proyecto ejecutivo de las instalaciones eléctricas de un edificio residencial, con unidades autónomas, áreas comunes y esquema vertical.`],
+    [`Instalações elétricas residenciais`, `Residential electrical installations`, `Instalaciones eléctricas residenciales`],
+    [`Projeto executivo em 4 pranchas formato A0`, `Detailed design on 4 A0 sheets`, `Proyecto ejecutivo en 4 láminas formato A0`],
+    [`Planta por pavimento com apartamentos e circulação`, `Floor plan per level with apartments and circulation`, `Plano por piso con apartamentos y circulación`],
+    [`Esquema vertical e quadro de circuitos`, `Riser diagram and circuit schedule`, `Esquema vertical y cuadro de circuitos`],
+    [`Planta do projeto elétrico do edifício residencial`, `Floor plan from the residential building electrical design`, `Plano del proyecto eléctrico del edificio residencial`],
 
-/* CELULAR */
-@media(max-width:760px){
-  .proj{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
-  .hero{padding:48px 0}
-  .hero h1{font-size:30px}
-  .hero p{font-size:16px}
-  .hero .logo{flex:0 0 auto;width:200px;padding:14px}
-  h2{font-size:25px}
-  section{padding:48px 0}
-  .nav .brand{font-size:15px}
-}
-@media(max-width:480px){
-  .total{padding:24px}
-  .total .n{font-size:80px}
-  .total .t strong{font-size:20px}
-  .hero .btn,.contact .btn{display:block;text-align:center}
-  .contact span{font-size:17px}
-  .ficha div{flex-direction:column;gap:0}
-  .ficha b{flex:none}
-}
-</style>
-</head>
-<body>
+    [`Subestação compacta 13,8 kV / 380 V`, `Compact substation 13.8 kV / 380 V`, `Subestación compacta 13,8 kV / 380 V`],
+    [`Projeto de subestação compacta abrigada, com compartimentos de alta tensão, transformador e baixa tensão.`,
+     `Design of an enclosed compact substation, with high-voltage, transformer and low-voltage compartments.`,
+     `Proyecto de subestación compacta abrigada, con compartimentos de alta tensión, transformador y baja tensión.`],
+    [`Subestações em média tensão`, `Medium-voltage substations`, `Subestaciones de media tensión`],
+    [`Transformador a óleo de 1.000 kVA`, `1,000 kVA oil-immersed transformer`, `Transformador en aceite de 1.000 kVA`],
+    [`Banco de capacitores 6 × 300 kVAR em 380 V`, `Capacitor bank 6 × 300 kVAR at 380 V`, `Banco de capacitores 6 × 300 kVAR en 380 V`],
+    [`Disjuntor geral de baixa tensão`, `Low-voltage main circuit breaker`, `Interruptor general de baja tensión`],
+    [`Módulo de 3,12 m × 2,45 m`, `3.12 m × 2.45 m module`, `Módulo de 3,12 m × 2,45 m`],
+    [`Prancha do projeto da subestação compacta`, `Sheet from the compact substation design`, `Lámina del proyecto de la subestación compacta`],
 
-<nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="#inicio">TMT <span>Engenharia Elétrica</span></a> 
-    <ul>
-      <li><a class="l" href="#servicos">Serviços</a></li>
-      <li><a class="l" href="#projetos">Projetos</a></li>
-      <li><a class="l" href="#sobre">Sobre</a></li>
-      <li><a class="l" href="#avaliacoes">Avaliações</a></li>
-      <li><a class="l" href="#contato">Contato</a></li>
-    </ul>
-  </div>
-</nav>
+    [`CCM e QGBT em painel de 4 colunas`, `MCC and QGBT in a 4-column panel`, `CCM y QGBT en tablero de 4 columnas`],
+    [`Projeto de painel de comando e potência que reúne centro de controle de motores (CCM) e quadro geral de baixa tensão (QGBT).`,
+     `Design of a control and power panel combining a motor control center (MCC) and a low-voltage main switchboard (QGBT).`,
+     `Proyecto de tablero de control y potencia que reúne centro de control de motores (CCM) y tablero general de baja tensión (QGBT).`],
+    [`Dimensionado para até 650 kVA`, `Sized for up to 650 kVA`, `Dimensionado para hasta 650 kVA`],
+    [`Carga atual de 378 kVA, com folga para expansão`, `Current load of 378 kVA, with room for expansion`, `Carga actual de 378 kVA, con margen para expansión`],
+    [`Disjuntores ABB Tmax e disjuntor aberto E3S`, `ABB Tmax breakers and E3S air circuit breaker`, `Interruptores ABB Tmax e interruptor abierto E3S`],
+    [`Painel de 3.300 × 2.200 mm`, `3,300 × 2,200 mm panel`, `Tablero de 3.300 × 2.200 mm`],
+    [`Prancha do painel CCM e QGBT`, `Sheet from the MCC and QGBT panel`, `Lámina del tablero CCM y QGBT`],
 
-<header class="hero" id="inicio">
-  <div class="wrap">
-    <div class="txt">
-      <h1>Parceria que conecta, tecnologia que movimenta.</h1>
-      <p>Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
-      <a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a>
-    </div>
-    <div class="logo"><img src="assets/logo.png" width="380" height="380" alt="TMT Engenharia"></div>
-  </div>
-</header>
+    [`SPDA de edifício de 11 pavimentos`, `SPDA for an 11-story building`, `SPDA de edificio de 11 pisos`],
+    [`Projeto de proteção contra descargas atmosféricas de edifício de 11 pavimentos, com captação, descidas pela estrutura, equipotencialização e prancha de detalhamento.`,
+     `Lightning protection design for an 11-story building, with air terminals, down conductors through the structure, equipotential bonding and a detail sheet.`,
+     `Proyecto de protección contra descargas atmosféricas de un edificio de 11 pisos, con captación, bajadas por la estructura, equipotencialización y lámina de detalle.`],
+    [`Projeto em 7 pranchas formato A0, com prancha de detalhamento`, `Design on 7 A0 sheets, including a detail sheet`, `Proyecto en 7 láminas formato A0, con lámina de detalle`],
+    [`Para-raios tipo Franklin em mastro de 6 m, com sinalizador noturno`, `Franklin-type air terminal on a 6 m mast, with night beacon`, `Pararrayos tipo Franklin en mástil de 6 m, con baliza nocturna`],
+    [`Descidas pelo vergalhão (CA-25) das estruturas e aterramento nos pilares`, `Down conductors through the structural rebar (CA-25) and grounding at the columns`, `Bajadas por la armadura (CA-25) de las estructuras y puesta a tierra en los pilares`],
+    [`Anel de equipotencialização e caixa de equalização (LEP/TAP) ligada a elevadores, incêndio e gás`, `Equipotential bonding ring and equalization box (LEP/TAP) connected to elevators, fire systems and gas`, `Anillo de equipotencialización y caja de ecualización (LEP/TAP) conectada a ascensores, incendio y gas`],
+    [`Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares`, `SPDA design details: Franklin air terminal, equalization box, bonding and column grounding`, `Detalle del proyecto de SPDA: pararrayos Franklin, caja de ecualización, amarre y puesta a tierra de los pilares`],
 
-<section class="dark" id="numeros">
-  <div class="wrap">
-    <div class="eyebrow">Resultados em números</div>
-    <h2>Experiência em projetos de todos os portes</h2>
-    <p class="lead">Projetos concluídos, além dos cases apresentados neste site.</p>
-    <div class="total">
-      <div class="n">35</div>
-      <div class="t">
-        <strong>trabalhos técnicos entregues, entre projetos, painéis, perícias e vistorias</strong>
-        <div class="chips">
-          <span><b>6</b> instalações elétricas prediais</span>
-          <span><b>3</b> Projetos SPDA</span>
-          <span><b>3</b> projetos industriais</span>
-          <span><b>2</b> painéis de comando</span>
-          <span><b>21</b> perícias e vistorias</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    // Sobre
+    [`Sobre a TMT`, `About TMT`, `Sobre TMT`],
+    [`Engenharia elétrica com proximidade e rigor técnico`, `Electrical engineering with closeness and technical rigor`, `Ingeniería eléctrica con cercanía y rigor técnico`],
+    [`A TMT Engenharia reúne experiência em projetos elétricos para residências, comércios e indústrias, com obras em diferentes estados do Brasil. Aqui, cada projeto é conduzido do início ao fim pelo próprio engenheiro responsável, sem intermediários: você tem comunicação direta, respostas rápidas e soluções técnicas alinhadas à realidade da sua obra.`,
+     `TMT Engenharia brings experience in electrical design for homes, businesses and industries, with works in different states across Brazil. Here, each project is led from start to finish by the engineer in charge, with no intermediaries: you get direct communication, quick answers and technical solutions aligned with the reality of your site.`,
+     `TMT Engenharia reúne experiencia en proyectos eléctricos para viviendas, comercios e industrias, con obras en diferentes estados de Brasil. Aquí, cada proyecto es conducido de principio a fin por el propio ingeniero responsable, sin intermediarios: usted tiene comunicación directa, respuestas rápidas y soluciones técnicas alineadas con la realidad de su obra.`],
+    [`Conversa inicial`, `Initial conversation`, `Conversación inicial`],
+    [`Entendemos sua necessidade e as características da obra.`, `We understand your needs and the characteristics of the site.`, `Entendemos su necesidad y las características de la obra.`],
+    [`Desenvolvemos o projeto técnico com clareza e atenção às normas.`, `We develop the technical design with clarity and attention to standards.`, `Desarrollamos el proyecto técnico con claridad y atención a las normas.`],
+    [`Avaliação técnica`, `Technical assessment`, `Evaluación técnica`],
+    [`Avaliamos o "as build" para garantir fidelidade ao projeto.`, `We assess the as-built installation to ensure fidelity to the design.`, `Evaluamos el "as built" para garantizar la fidelidad al proyecto.`],
+    [`Entrega`, `Delivery`, `Entrega`],
+    [`Documentação organizada e suporte para dúvidas.`, `Organized documentation and support for any questions.`, `Documentación organizada y soporte para dudas.`],
+    [`Segurança`, `Safety`, `Seguridad`],
+    [`Instalações bem projetadas protegem pessoas e patrimônio.`, `Well-designed installations protect people and property.`, `Las instalaciones bien proyectadas protegen a las personas y el patrimonio.`],
+    [`Clareza`, `Clarity`, `Claridad`],
+    [`Projetos organizados e fáceis de executar.`, `Organized designs that are easy to build.`, `Proyectos organizados y fáciles de ejecutar.`],
+    [`Proximidade`, `Closeness`, `Cercanía`],
+    [`Atendimento direto e transparente.`, `Direct and transparent service.`, `Atención directa y transparente.`],
+    [`Tecnologia`, `Technology`, `Tecnología`],
+    [`Soluções atuais, aplicadas com critério.`, `Modern solutions, applied with judgment.`, `Soluciones actuales, aplicadas con criterio.`],
 
-<section class="tint" id="servicos">
-  <div class="wrap">
-    <div class="eyebrow">Serviços</div>
-    <h2>Soluções em engenharia elétrica</h2>
-    <p class="lead">Atuamos em projeto, perícias e vistorias, cobrindo desde instalações prediais até subestações e painéis de média e baixa tensão.</p>
-    <div class="grid g3">
-      <div class="card"><small>01</small><h3>Instalações elétricas</h3>Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.</div>
-      <div class="card"><small>02</small><h3>Elétrica industrial</h3>Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.</div>
-      <div class="card"><small>03</small><h3>Subestações</h3>Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.</div>
-      <div class="card"><small>04</small><h3>SPDA (para-raios)</h3>Projeto de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, conforme a NBR 5419.</div>
-      <div class="card"><small>05</small><h3>Automação residencial</h3>Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div>
-      <div class="card"><small>06</small><h3>Painéis de comando e potência</h3>Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div>
-      <div class="card"><small>07</small><h3>Perícias e vistorias</h3>Laudos e inspeções técnicas para verificar conformidade, causas de falhas e regularização.</div>
-      <div class="card"><small>08</small><h3>Consultorias</h3>Apoio técnico para decisões, adequações, ampliações e análise de projetos.</div>
-      <div class="card" style="background:var(--navy);border-top-color:var(--teal);color:#dbe6f3"><small>ESCOPO</small><h3 style="color:#fff">Projetos e avaliações técnicas</h3>A TMT Engenharia atua no desenvolvimento de projetos elétricos e na realização de vistorias e perícias técnicas, avaliando as condições das instalações, sua conformidade com as normas aplicáveis e possíveis causas de falhas.</div>
-    </div>
-  </div>
-</section>
+    // Responsável técnico
+    [`Responsável técnico`, `Technical lead`, `Responsable técnico`],
+    [`Engenheiro Eletrônico`, `Electronics Engineer`, `Ingeniero Electrónico`],
+    [`Vitor é o responsável técnico da TMT Engenharia e acompanha pessoalmente cada projeto. Atua em instalações elétricas prediais, elétrica industrial, subestações, SPDA, painéis de comando e potência, automação residencial, perícias, vistorias e consultorias.`,
+     `Vitor is the technical lead at TMT Engenharia and personally oversees every project. He works on building electrical installations, industrial electrical systems, substations, SPDA, control and power panels, home automation, expert reports, inspections and consulting.`,
+     `Vitor es el responsable técnico de TMT Engenharia y acompaña personalmente cada proyecto. Actúa en instalaciones eléctricas de edificios, eléctrica industrial, subestaciones, SPDA, tableros de control y potencia, automatización residencial, peritajes, inspecciones y consultorías.`],
+    [`Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia`, `Vitor Thimóteo Daubermann, technical lead at TMT Engenharia`, `Vitor Thimóteo Daubermann, responsable técnico de TMT Engenharia`],
 
-<section id="projetos" style="padding-bottom:10px">
-  <div class="wrap">
-    <div class="eyebrow">Projetos</div>
-    <h2>Projetos selecionados</h2>
-    <p class="lead" style="margin-bottom:40px">Uma amostra de trabalhos da TMT. Por respeito à confidencialidade, os clientes não são identificados.</p>
+    // Avaliações
+    [`O que nossos clientes dizem`, `What our clients say`, `Lo que dicen nuestros clientes`],
+    [`Avaliações reais de clientes no Google.`, `Real client reviews on Google.`, `Opiniones reales de clientes en Google.`],
 
-    <div><div class="proj">
-      <div>
-        <h3>Instalações elétricas de supermercado</h3>
-        <p>Projeto elétrico completo de edificação comercial, com iluminação, tomadas, distribuição e diagramas de quadros.</p>
-        <div class="ficha"><div><b>Região</b><span>Guarapuava/PR</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Instalações elétricas comerciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Projeto em 8 pranchas formato A0</li><li>Plantas, notas, quadros de cargas e diagramas</li><li>Iluminação distribuída em malha na área de vendas</li></ul>
-      </div>
-      <figure><img src="assets/projeto-supermercado.jpg" width="900" height="636" loading="lazy" alt="Prancha do projeto elétrico de supermercado"></figure>
-    </div></div>
+    // Contato
+    [`Vamos conversar sobre o seu projeto`, `Let's talk about your project`, `Conversemos sobre su proyecto`],
+    [`Conte o que você precisa e retornaremos o mais rápido possível. Atendemos todo o Brasil.`, `Tell us what you need and we will get back to you as soon as possible. We serve all of Brazil.`, `Cuéntenos lo que necesita y le responderemos lo más pronto posible. Atendemos en todo Brasil.`],
+    [`Sede`, `Headquarters`, `Sede`],
+    [`Cascavel/PR · atendimento em todo o Brasil`, `Cascavel/PR · serving all of Brazil`, `Cascavel/PR · atención en todo Brasil`],
+    [`Solicitar orçamento`, `Request a quote`, `Solicitar presupuesto`],
+    [`Perguntas frequentes`, `Frequently asked questions`, `Preguntas frecuentes`],
+    [`Atendem outras cidades e estados?`, `Do you serve other cities and states?`, `¿Atienden otras ciudades y estados?`],
+    [`Sim. Atuamos em todo o Brasil, com projetos feitos de forma remota e fiscalização conforme a necessidade da obra.`, `Yes. We work across Brazil, with designs developed remotely and inspections as the project requires.`, `Sí. Actuamos en todo Brasil, con proyectos realizados de forma remota e inspección según la necesidad de la obra.`],
+    [`O que preciso enviar para pedir um orçamento?`, `What do I need to send to request a quote?`, `¿Qué necesito enviar para pedir un presupuesto?`],
+    [`Local da obra, tipo de serviço, planta arquitetônica (se houver) e uma breve descrição. Se ainda não tiver tudo, envie o que tiver e conversamos.`, `Site location, type of service, architectural plan (if available) and a brief description. If you don't have everything yet, send what you have and we'll talk.`, `Ubicación de la obra, tipo de servicio, plano arquitectónico (si lo hay) y una breve descripción. Si aún no tiene todo, envíe lo que tenga y conversamos.`],
+    [`Vocês fazem projeto e acompanham a obra?`, `Do you design and also oversee construction?`, `¿Hacen el proyecto y acompañan la obra?`],
+    [`A TMT Engenharia não realiza acompanhamento contínuo ou fiscalização da execução de obras. Nossa atuação nesse segmento concentra-se na elaboração de projetos, vistorias técnicas e perícias de engenharia.`, `TMT Engenharia does not provide continuous supervision or oversight of construction work. Our activity in this field focuses on design, technical inspections and engineering expert reports.`, `TMT Engenharia no realiza acompañamiento continuo ni fiscalización de la ejecución de obras. Nuestra actuación en este segmento se concentra en la elaboración de proyectos, inspecciones técnicas y peritajes de ingeniería.`],
+    [`Fazem projeto de SPDA (para-raios)?`, `Do you design SPDA (lightning protection)?`, `¿Hacen proyectos de SPDA (pararrayos)?`],
+    [`Sim. Projetamos o sistema de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, para edifícios residenciais, comerciais e industriais.`, `Yes. We design lightning protection systems, with air terminals, down conductors, grounding and equipotential bonding, for residential, commercial and industrial buildings.`, `Sí. Proyectamos el sistema de protección contra descargas atmosféricas, con captación, bajadas, puesta a tierra y equipotencialización, para edificios residenciales, comerciales e industriales.`],
+    [`Fazem perícias e vistorias?`, `Do you carry out expert reports and inspections?`, `¿Realizan peritajes e inspecciones?`],
+    [`Sim. Realizamos vistorias e perícias em instalações elétricas, com inspeções, análises técnicas e emissão de laudos, conforme a finalidade e o escopo contratado.`, `Yes. We carry out inspections and expert reports on electrical installations, including inspections, technical analyses and issuance of reports, according to the purpose and contracted scope.`, `Sí. Realizamos inspecciones y peritajes en instalaciones eléctricas, con inspecciones, análisis técnicos y emisión de informes, según la finalidad y el alcance contratado.`],
+    [`Os clientes aparecem no site?`, `Are clients shown on the site?`, `¿Los clientes aparecen en el sitio?`],
+    [`Apenas se o cliente autorizar. Preservamos a confidencialidade e mostramos a região e características técnicas dos projetos.`, `Only if the client authorizes it. We preserve confidentiality and show the region and technical characteristics of the projects.`, `Solo si el cliente lo autoriza. Preservamos la confidencialidad y mostramos la región y las características técnicas de los proyectos.`],
 
-    <div><div class="proj">
-      <div>
-        <h3>Edifício residencial de 4 pavimentos</h3>
-        <p>Projeto executivo das instalações elétricas de edifício residencial, com unidades autônomas, áreas comuns e esquema vertical.</p>
-        <div class="ficha"><div><b>Região</b><span>Dourados/MS</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Instalações elétricas residenciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Projeto executivo em 4 pranchas formato A0</li><li>Planta por pavimento com apartamentos e circulação</li><li>Esquema vertical e quadro de circuitos</li></ul>
-      </div>
-      <figure><img src="assets/projeto-edificio.jpg" width="600" height="822" loading="lazy" alt="Planta do projeto elétrico do edifício residencial"></figure>
-    </div></div>
+    // Rodapé
+    [`Cascavel/PR · Responsável técnico: Vitor Thimóteo Daubermann · CREA-PR 232367`, `Cascavel/PR · Technical lead: Vitor Thimóteo Daubermann · CREA-PR 232367`, `Cascavel/PR · Responsable técnico: Vitor Thimóteo Daubermann · CREA-PR 232367`]
+  ];
 
-    <div><div class="proj">
-      <div>
-        <h3>Subestação compacta 13,8 kV / 380 V</h3>
-        <p>Projeto de subestação compacta abrigada, com compartimentos de alta tensão, transformador e baixa tensão.</p>
-        <div class="ficha"><div><b>Região</b><span>Joinville/SC</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Subestações em média tensão</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Transformador a óleo de 1.000 kVA</li><li>Banco de capacitores 6 × 300 kVAR em 380 V</li><li>Disjuntor geral de baixa tensão</li><li>Módulo de 3,12 m × 2,45 m</li></ul>
-      </div>
-      <figure><img src="assets/projeto-subestacao.jpg" width="900" height="636" loading="lazy" alt="Prancha do projeto da subestação compacta"></figure>
-    </div></div>
+  var META = {
+    en: {
+      title: 'TMT Engenharia Elétrica | Electrical design, substations, SPDA, panels and expert reports',
+      desc: 'TMT Engenharia, in Cascavel/PR, serves all of Brazil with electrical design, substations, SPDA (lightning protection), control and power panels, home automation, expert reports and inspections.',
+      og: 'Electrical design, substations, SPDA, control panels and expert reports, with direct service from the engineer in charge.',
+      wa: 'Hello, I found you through the TMT Engenharia website and would like a quote.',
+      mail: 'Quote request - TMT Engenharia', html: 'en'
+    },
+    es: {
+      title: 'TMT Engenharia Elétrica | Proyectos eléctricos, subestaciones, SPDA, tableros y peritajes',
+      desc: 'TMT Engenharia, en Cascavel/PR, atiende en todo Brasil con proyectos eléctricos, subestaciones, SPDA (pararrayos), tableros de control y potencia, automatización residencial, peritajes e inspecciones.',
+      og: 'Proyectos eléctricos, subestaciones, SPDA, tableros de control y peritajes, con atención directa del ingeniero responsable.',
+      wa: 'Hola, vine por el sitio web de TMT Engenharia y me gustaría solicitar un presupuesto.',
+      mail: 'Solicitud de presupuesto - TMT Engenharia', html: 'es'
+    }
+  };
 
-    <div><div class="proj">
-      <div>
-        <h3>CCM e QGBT em painel de 4 colunas</h3>
-        <p>Projeto de painel de comando e potência que reúne centro de controle de motores (CCM) e quadro geral de baixa tensão (QGBT).</p>
-        <div class="ficha"><div><b>Região</b><span>Matelândia/PR</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Painéis de comando e potência</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Dimensionado para até 650 kVA</li><li>Carga atual de 378 kVA, com folga para expansão</li><li>Disjuntores ABB Tmax e disjuntor aberto E3S</li><li>Painel de 3.300 × 2.200 mm</li></ul>
-      </div>
-      <figure><img src="assets/projeto-painel.jpg" width="900" height="636" loading="lazy" alt="Prancha do painel CCM e QGBT"></figure>
-    </div></div>
+  var norm = function (s) { return s.replace(/\s+/g, ' ').trim(); };
+  var MAP = { en: {}, es: {} };
+  D.forEach(function (r) { var k = norm(r[0]); MAP.en[k] = r[1]; MAP.es[k] = r[2]; });
 
-    <div><div class="proj">
-      <div>
-        <h3>SPDA de edifício de 11 pavimentos</h3>
-        <p>Projeto de proteção contra descargas atmosféricas de edifício de 11 pavimentos, com captação, descidas pela estrutura, equipotencialização e prancha de detalhamento.</p>
-        <div class="ficha"><div><b>Região</b><span>Cascavel/PR</span></div><div><b>Atuação</b><span>Projeto</span></div><div><b>Especialidade</b><span>SPDA (para-raios)</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Projeto em 7 pranchas formato A0, com prancha de detalhamento</li><li>Para-raios tipo Franklin em mastro de 6 m, com sinalizador noturno</li><li>Descidas pelo vergalhão (CA-25) das estruturas e aterramento nos pilares</li><li>Anel de equipotencialização e caixa de equalização (LEP/TAP) ligada a elevadores, incêndio e gás</li></ul>
-      </div>
-      <figure><img src="assets/projeto-spda.jpg" width="900" height="636" loading="lazy" alt="Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares"></figure>
-    </div></div>
-  </div>
-</section>
+  // Guarda o português original (base) para poder voltar a ele
+  var q = function (s) { return document.querySelector(s); };
+  var descEl = q('meta[name="description"]'), ogEl = q('meta[property="og:description"]');
+  META.pt = {
+    title: document.title,
+    desc: descEl ? descEl.content : '',
+    og: ogEl ? ogEl.content : '',
+    wa: 'Olá, vim pelo site da TMT Engenharia e gostaria de um orçamento.',
+    mail: 'Orçamento - TMT Engenharia', html: 'pt-BR'
+  };
 
-<section class="lt" id="sobre">
-  <div class="wrap">
-    <div class="eyebrow">Sobre a TMT</div>
-    <h2>Engenharia elétrica com proximidade e rigor técnico</h2>
-    <p class="lead">A TMT Engenharia reúne experiência em projetos elétricos para residências, comércios e indústrias, com obras em diferentes estados do Brasil. Aqui, cada projeto é conduzido do início ao fim pelo próprio engenheiro responsável, sem intermediários: você tem comunicação direta, respostas rápidas e soluções técnicas alinhadas à realidade da sua obra.</p>
-    <div class="grid g4 steps">
-      <div class="card"><h3>Conversa inicial</h3>Entendemos sua necessidade e as características da obra.</div>
-      <div class="card"><h3>Projeto</h3>Desenvolvemos o projeto técnico com clareza e atenção às normas.</div>
-      <div class="card"><h3>Avaliação técnica</h3>Avaliamos o "as build" para garantir fidelidade ao projeto.</div>
-      <div class="card"><h3>Entrega</h3>Documentação organizada e suporte para dúvidas.</div>
-    </div>
-    <div class="grid g4" style="margin-top:18px">
-      <div class="card"><h3>Segurança</h3>Instalações bem projetadas protegem pessoas e patrimônio.</div>
-      <div class="card"><h3>Clareza</h3>Projetos organizados e fáceis de executar.</div>
-      <div class="card"><h3>Proximidade</h3>Atendimento direto e transparente.</div>
-      <div class="card"><h3>Tecnologia</h3>Soluções atuais, aplicadas com critério.</div>
-    </div>
-  </div>
-</section>
+  var textNodes = [];
+  var tw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+  while (tw.nextNode()) {
+    var n = tw.currentNode, p = n.parentElement;
+    if (!p || /^(SCRIPT|STYLE|NOSCRIPT)$/.test(p.tagName)) continue;
+    if (p.closest('[class^="elfsight"]')) continue; // widget do Google fica no original
+    if (!n.nodeValue.trim()) continue;
+    textNodes.push({ n: n, pt: n.nodeValue });
+  }
+  var imgs = Array.prototype.map.call(document.images, function (i) { return { el: i, pt: i.getAttribute('alt') || '' }; });
 
-<section class="dark" id="responsavel">
-  <div class="wrap rt">
-    <div class="foto"><img src="assets/vitor.jpg" width="480" height="480" loading="lazy" alt="Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia"></div>
-    <div class="t">
-      <div class="eyebrow">Responsável técnico</div>
-      <h2>Vitor Thimóteo Daubermann</h2>
-      <p><b style="color:#fff">Engenheiro Eletrônico</b></p>
-      <span class="crea">CREA-PR 232367</span>
-      <p style="margin-top:12px">Vitor é o responsável técnico da TMT Engenharia e acompanha pessoalmente cada projeto. Atua em instalações elétricas prediais, elétrica industrial, subestações, SPDA, painéis de comando e potência, automação residencial, perícias, vistorias e consultorias.</p>
-    </div>
-  </div>
-</section>
+  function setLang(lang) {
+    textNodes.forEach(function (t) {
+      if (lang === 'pt') { t.n.nodeValue = t.pt; return; }
+      var tr = MAP[lang][norm(t.pt)];
+      if (tr !== undefined) t.n.nodeValue = t.pt.match(/^\s*/)[0] + tr + t.pt.match(/\s*$/)[0];
+    });
+    imgs.forEach(function (i) {
+      var tr = lang === 'pt' ? i.pt : MAP[lang][norm(i.pt)];
+      if (tr !== undefined) i.el.setAttribute('alt', tr);
+    });
+    var m = META[lang];
+    document.documentElement.lang = m.html;
+    document.title = m.title;
+    if (descEl) descEl.content = m.desc;
+    if (ogEl) ogEl.content = m.og;
+    var ogt = q('meta[property="og:title"]'); if (ogt) ogt.content = 'TMT Engenharia Elétrica';
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="https://wa.me/"]'), function (a) {
+      a.href = a.href.split('?')[0] + '?text=' + encodeURIComponent(m.wa);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('a[href^="mailto:"]'), function (a) {
+      a.href = a.href.split('?')[0] + '?subject=' + encodeURIComponent(m.mail);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.lang button'), function (b) {
+      b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false');
+    });
+    try { localStorage.setItem('tmt-lang', lang); } catch (e) {}
+  }
 
-<section class="lt" id="avaliacoes">
-  <div class="wrap">
-    <div class="eyebrow">Avaliações</div>
-    <h2>O que nossos clientes dizem</h2>
-    <p class="lead">Avaliações reais de clientes no Google.</p>
+  // Estilo e bandeiras (SVG, pois emojis de bandeira não aparecem no Windows)
+  var st = document.createElement('style');
+  st.textContent =
+    '.nav ul{min-width:0}' +
+    '.lang{display:flex;gap:8px;flex:none;align-items:center}' +
+    '.lang button{width:30px;height:20px;padding:0;border:0;border-radius:3px;overflow:hidden;cursor:pointer;background:none;opacity:.55;transition:opacity .15s,transform .15s}' +
+    '.lang button:hover{opacity:1;transform:translateY(-1px)}' +
+    '.lang button[aria-pressed="true"]{opacity:1;box-shadow:0 0 0 2px #5FE0CC}' +
+    '.lang svg{display:block;width:100%;height:100%}' +
+    '@media(max-width:480px){.lang{gap:6px}.lang button{width:26px;height:18px}.nav .wrap{gap:10px}}';
+  document.head.appendChild(st);
 
-    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-f1d5e788-32c8-4ea9-adb0-815481439b15" data-elfsight-app-lazy></div>
-  </div>
-</section>
+  var FLAGS = {
+    pt: ['Português (Brasil)', '<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#009C3B"/><path d="M15 3 27 10 15 17 3 10z" fill="#FFDF00"/><circle cx="15" cy="10" r="4.2" fill="#002776"/></svg>'],
+    en: ['English', '<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><g fill="#B22234"><rect width="30" height="2.86"/><rect y="5.71" width="30" height="2.86"/><rect y="11.43" width="30" height="2.86"/><rect y="17.14" width="30" height="2.86"/></g><rect width="13" height="10.86" fill="#3C3B6E"/></svg>'],
+    es: ['Español', '<svg viewBox="0 0 30 20"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/></svg>']
+  };
+  var box = document.createElement('div');
+  box.className = 'lang';
+  box.setAttribute('role', 'group');
+  box.setAttribute('aria-label', 'Idioma / Language / Idioma');
+  ['pt', 'en', 'es'].forEach(function (l) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.dataset.lang = l; b.title = FLAGS[l][0];
+    b.setAttribute('aria-label', FLAGS[l][0]); b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = FLAGS[l][1];
+    b.addEventListener('click', function () { setLang(l); });
+    box.appendChild(b);
+  });
+  q('.nav .wrap').appendChild(box);
 
-<section id="contato" class="dark" style="background:#0A1E42">
-  <div class="wrap contact">
-    <div class="eyebrow">Contato</div>
-    <h2>Vamos conversar sobre o seu projeto</h2>
-    <p class="lead">Conte o que você precisa e retornaremos o mais rápido possível. Atendemos todo o Brasil.</p>
-    <a class="row" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><b>WhatsApp</b><span>(45) 9 8823-9581</span></a>
-    <a class="row" href="https://www.instagram.com/tmt.engenhariaeletrica" target="_blank" rel="noopener"><b>Instagram</b><span>@tmt.engenhariaeletrica</span></a>
-    <a class="row" href="mailto:tmtengenhariaeletrica@gmail.com?subject=Or%C3%A7amento%20-%20TMT%20Engenharia"><b>E-mail</b><span>tmtengenhariaeletrica@gmail.com</span></a>
-    <div class="row"><b>Sede</b><span>Cascavel/PR · atendimento em todo o Brasil</span></div>
-    <p style="margin:22px 0 40px"><a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a></p>
-    <h2 style="font-size:22px">Perguntas frequentes</h2><br>
-    <details><summary>Atendem outras cidades e estados?</summary><p>Sim. Atuamos em todo o Brasil, com projetos feitos de forma remota e fiscalização conforme a necessidade da obra.</p></details>
-    <details><summary>O que preciso enviar para pedir um orçamento?</summary><p>Local da obra, tipo de serviço, planta arquitetônica (se houver) e uma breve descrição. Se ainda não tiver tudo, envie o que tiver e conversamos.</p></details>
-    <details><summary>Vocês fazem projeto e acompanham a obra?</summary><p>A TMT Engenharia não realiza acompanhamento contínuo ou fiscalização da execução de obras. Nossa atuação nesse segmento concentra-se na elaboração de projetos, vistorias técnicas e perícias de engenharia.</p></details>
-    <details><summary>Fazem projeto de SPDA (para-raios)?</summary><p>Sim. Projetamos o sistema de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, para edifícios residenciais, comerciais e industriais.</p></details>
-    <details><summary>Fazem perícias e vistorias?</summary><p>Sim. Realizamos vistorias e perícias em instalações elétricas, com inspeções, análises técnicas e emissão de laudos, conforme a finalidade e o escopo contratado.</p></details>
-    <details><summary>Os clientes aparecem no site?</summary><p>Apenas se o cliente autorizar. Preservamos a confidencialidade e mostramos a região e características técnicas dos projetos.</p></details>
-  </div>
-</section>
-
-<footer>
-   <div class="wrap">TMT Engenharia Elétrica · VTD Projetos Elétricos LTDA · CNPJ 69.319.550/0001-74<br>Cascavel/PR · Responsável técnico: Vitor Thimóteo Daubermann · CREA-PR 232367<br>© 2026 TMT Engenharia Elétrica</div>
-</footer>
-
-</body>
-</html>
+  // Idioma inicial: ?lang=en na URL, senão o último escolhido, senão português
+  var start = 'pt';
+  try {
+    var u = new URLSearchParams(location.search).get('lang');
+    var s = localStorage.getItem('tmt-lang');
+    start = (u && FLAGS[u]) ? u : (s && FLAGS[s]) ? s : 'pt';
+  } catch (e) {}
+  setLang(start);
+})();
