@@ -1,16 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TMT Engenharia Elétrica | Projetos elétricos, subestações, SPDA, painéis e perícias</title>
-<meta name="description" content="TMT Engenharia, em Cascavel/PR, atende todo o Brasil com projetos elétricos, subestações, SPDA (para-raios), painéis de comando e potência, automação residencial, perícias e vistorias.">
-<meta name="theme-color" content="#0F2A5A">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TMT Engenharia Elétrica">
-<meta property="og:description" content="Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável.">
-<meta property="og:image" content="assets/logo.png">
-<link rel="icon" type="image/png" href="assets/logo.png">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>TMT Engenharia | Projetos elétricos e eletrônicos, vistorias e perícias</title>
+<meta content="TMT Engenharia, em Cascavel/PR, atende todo o Brasil com projetos elétricos e eletrônicos, vistorias técnicas e perícias de engenharia." name="description"/>
+<meta content="#0F2A5A" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="TMT Engenharia Elétrica" property="og:title"/>
+<meta content="Projetos elétricos e eletrônicos, vistorias técnicas e perícias, com atendimento direto do engenheiro responsável." property="og:description"/>
+<meta content="assets/logo.png" property="og:image"/>
+<link href="assets/logo.png" rel="icon" type="image/png"/>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet"/>
 <style>
 :root{--navy:#0F2A5A;--teal:#15A394;--light:#F3F7FA;--gray:#4A5568;--line:#D5DEE6}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -140,237 +142,421 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   .ficha div{flex-direction:column;gap:0}
   .ficha b{flex:none}
 }
+
+/* Bootstrap 5.3 + identidade visual TMT */
+:root{--bs-primary:#0F2A5A;--bs-primary-rgb:15,42,90;--bs-success:#15A394;--bs-success-rgb:21,163,148;--bs-body-font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#344256;font-size:16px;line-height:1.65}
+.wrap{max-width:1160px}
+.btn,.btn:focus{background:#15A394;color:#fff;border:1px solid #15A394;box-shadow:none}
+.btn:hover{background:#0d8277;border-color:#0d8277;color:#fff}
+.nav .wrap{position:relative}
+.nav ul{margin-bottom:0;padding-left:0}
+.hero h1{max-width:720px;letter-spacing:-.035em}
+.hero p{max-width:700px;color:#e1ebf6}
+section{padding:76px 0}
+h2{font-weight:750;letter-spacing:-.025em}
+.lead{color:#46566b;font-size:1.06rem}
+.dark .lead{color:#e0e9f4}
+.tint{background:#eaf5f3}
+.card{color:#344256;line-height:1.6;box-shadow:0 5px 18px rgba(15,42,90,.045);height:100%}
+.card h3{font-weight:700}
+.scope-card{background:#0F2A5A!important;color:#edf4fb!important}
+.scope-card h3{color:#fff!important}
+.scope-card small{color:#9fe3da}
+.services-accordion{margin-top:4px}
+.services-accordion .accordion-item{border:1px solid #d5dee6;margin-bottom:9px;border-radius:9px!important;overflow:hidden;background:#fff}
+.services-accordion .accordion-button{font-size:1rem;font-weight:700;color:#0F2A5A;background:#fff;box-shadow:none;padding:17px 18px}
+.services-accordion .accordion-button:not(.collapsed){background:#eaf5f3;color:#0F2A5A}
+.services-accordion .accordion-button:focus{box-shadow:inset 0 0 0 2px #15A394}
+.service-number{color:#15A394;font-size:.78rem;letter-spacing:.08em;margin-right:13px}
+.services-accordion .accordion-body{color:#344256;padding:0 18px 18px}
+.projects-desktop{grid-template-columns:minmax(230px,.72fr) minmax(0,1.7fr);gap:28px;align-items:start;margin:30px 0 50px}
+.project-selector{display:flex;flex-direction:column;gap:9px}
+.project-select-btn{width:100%;text-align:left;padding:16px 18px;border:1px solid #d5dee6;border-left:4px solid transparent;border-radius:7px;background:#fff;color:#344256;font-weight:650;transition:.2s}
+.project-select-btn:hover{border-color:#15A394;background:#f4faf9}
+.project-select-btn.active{border-left-color:#15A394;border-color:#b9dcd7;background:#eaf5f3;color:#0F2A5A}
+.project-select-btn small{display:block;color:#64748b;font-size:.75rem;font-weight:500;margin-bottom:4px}
+.project-detail{min-width:0;background:#fff;border:1px solid #d5dee6;border-radius:10px;padding:24px;box-shadow:0 10px 28px rgba(15,42,90,.07)}
+.project-detail .proj{margin:0;grid-template-columns:minmax(0,1fr) minmax(220px,.95fr);gap:24px}
+.project-detail .proj h3{font-size:1.35rem}
+.project-detail figure{margin:0;align-self:center}
+.project-detail figure img{width:100%;max-height:520px;object-fit:contain}
+.project-detail .ficha b{flex-basis:105px}
+.subsection-title{color:#0F2A5A;font-size:1.25rem;font-weight:750;margin:38px 0 20px}
+.project-timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;position:relative;margin:28px 0 44px}
+.project-timeline:before{content:"";position:absolute;top:22px;left:8%;right:8%;height:2px;background:#b8d8d3}
+.timeline-step{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;min-width:0}
+.timeline-number{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#0F2A5A;color:#fff;border:4px solid #eaf5f3;font-weight:800}
+.timeline-step h4{font-size:1.05rem;color:#0F2A5A;font-weight:750;margin:0}
+.timeline-step p{margin:0;color:#46566b;font-size:.93rem}
+.timeline-step details{margin:0;padding:0;border:0;background:transparent}
+.timeline-step summary{display:inline-flex;align-items:center;gap:7px;color:#087f75;font-size:.85rem;font-weight:700;list-style:none}
+.timeline-step summary::-webkit-details-marker{display:none}
+.timeline-step summary:after{content:"⌄";font-size:1.15rem;transition:transform .2s}
+.timeline-step details[open] summary:after{transform:rotate(180deg)}
+.timeline-step details p{margin-top:9px;padding:12px;background:#fff;border-left:3px solid #15A394;border-radius:0 6px 6px 0;font-size:.86rem}
+.about-tabs{gap:8px;border-bottom:1px solid #d5dee6;padding-bottom:12px}
+.about-tabs .nav-link{border-radius:6px;color:#0F2A5A;font-weight:650}
+.about-tabs .nav-link.active{background:#0F2A5A;color:#fff}
+.about-tab-content{background:#fff;border:1px solid #d5dee6;border-radius:9px;padding:22px;margin-top:16px;min-height:140px}
+.about-tab-content h4{font-size:1.1rem;color:#0F2A5A;font-weight:750}
+.about-tab-content p{margin:0;color:#46566b}
+.values-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.values-grid>div{display:flex;flex-direction:column;gap:3px;padding:12px;border-left:3px solid #15A394;background:#f4f8fa;border-radius:0 6px 6px 0}
+.values-grid b{color:#0F2A5A}
+.values-grid span{font-size:.92rem;color:#46566b}
+.rt{flex-direction:row;align-items:center}
+.rt .t{max-width:780px}
+.contact .lead{color:#e0e9f4}
+.contact details{box-shadow:none}
+.contact details p{color:#344256}
+.mobile-copy{display:none}
+:focus-visible{outline:3px solid #15A394;outline-offset:3px}
+@media(max-width:767.98px){
+ body{font-size:15px;line-height:1.58}
+ section{padding:48px 0}
+ .wrap{padding-left:18px;padding-right:18px}
+ .hero{padding:42px 0}
+ .hero h1{font-size:clamp(1.85rem,7vw,2.25rem);line-height:1.12;margin-bottom:13px}
+ .hero p{font-size:.98rem;line-height:1.55;margin-bottom:20px}
+ .mobile-copy{display:inline}
+ .desktop-copy{display:none}
+ h2{font-size:clamp(1.45rem,5.8vw,1.8rem);line-height:1.2}
+ .lead{font-size:.96rem;margin-bottom:22px}
+ .hero .logo{width:150px;margin:0 auto}
+ .total{gap:16px;padding:20px}
+ .total .n{font-size:68px}
+ .total .t strong{font-size:1.12rem}
+ .chips span{font-size:.78rem;padding:5px 10px}
+ .projects-desktop{display:none!important}
+ .proj-track{display:flex!important}
+ .project-timeline{display:flex;flex-direction:column;gap:22px;margin:20px 0 36px;padding-left:4px}
+ .project-timeline:before{top:12px;bottom:12px;left:24px;right:auto;width:2px;height:auto}
+ .timeline-step{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:12px;row-gap:5px}
+ .timeline-number{grid-row:1 / span 4;width:44px;height:44px}
+ .timeline-step h4{padding-top:8px}
+ .timeline-step p{font-size:.9rem}
+ .timeline-step details{grid-column:2}
+ .timeline-step summary{font-size:.82rem}
+ .about-tab-content{padding:17px;min-height:0}
+ .values-grid{grid-template-columns:1fr}
+ .subsection-title{font-size:1.12rem;margin:28px 0 15px}
+ .rt{flex-direction:column;align-items:flex-start}
+ .rt .foto{width:145px;height:145px}
+ .nav .wrap{gap:8px}
+ .nav .brand{font-size:.88rem}
+ .lang{margin-left:auto}
+ .menu-btn{width:36px;height:36px}
+}
+@media(min-width:768px){.proj-track{display:none!important}}
+@media(max-width:480px){.hero .logo{width:135px}.contact span{font-size:1rem}.ficha div{flex-direction:row}.ficha b{flex:0 0 100px}}
+
+/* AJUSTES DE CONTRASTE E IDENTIDADE INSTITUCIONAL */
+:root{
+  --teal-accessible:#08786f;
+  --body-ink:#263548;
+  --muted-ink:#394b60;
+  --soft-border:#bdcbd8;
+}
+body{color:var(--body-ink)}
+p, .lead, .card, .project-detail, .timeline-step p,
+.about-tab-content p, .values-grid span{color:var(--muted-ink)}
+.eyebrow,.card small,.ficha b,.service-number,
+.timeline-step summary,.identity-kicker{color:var(--teal-accessible)}
+.btn,.btn:focus,.proj-ctrl button{background:#08786f;border-color:#08786f;color:#fff}
+.btn:hover,.proj-ctrl button:hover:not(:disabled){background:#065f58;border-color:#065f58;color:#fff}
+.card h3,.proj h3,.ficha span,.timeline-step h4,
+.subsection-title,.identity-card h4,.values-grid b{color:#0F2A5A}
+.tint{background:#e8f2f1}
+.lt{background:#f1f5f8}
+.total{background:#15396d}
+.chips span{background:rgba(255,255,255,.17);color:#fff}
+.chips b,.total .n,.stat b{color:#8ff0df}
+.scope-card{background:#0F2A5A!important;color:#fff!important}
+.scope-card h3{color:#fff!important}
+.scope-card small{color:#a8eee3!important}
+.crea{background:#08786f}
+footer{color:#d0dbea}
+.identity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.identity-card{background:#fff;border:1px solid var(--soft-border);border-top:4px solid #08786f;border-radius:9px;padding:24px;box-shadow:0 7px 22px rgba(15,42,90,.06)}
+.identity-card h4{font-size:1.25rem;font-weight:800;margin:7px 0 10px}
+.identity-card p{margin:0;line-height:1.7}
+.identity-kicker{font-size:.72rem;font-weight:800;letter-spacing:.09em}
+.identity-values{grid-column:1/-1}
+.values-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:12px}
+.values-grid>div{background:#f0f5f7;border-left-color:#08786f}
+.values-grid span{line-height:1.5}
+@media(max-width:767.98px){
+ .identity-grid{grid-template-columns:1fr;gap:13px}
+ .identity-values{grid-column:auto}
+ .identity-card{padding:19px}
+ .values-grid{grid-template-columns:1fr}
+}
+
+/* AJUSTE DEFINITIVO DE CONTRASTE DOS TÍTULOS E RÓTULOS DE SEÇÃO */
+/* As cores são definidas por seção e com especificidade alta para evitar
+   que regras do Bootstrap ou estilos herdados deixem o texto ilegível. */
+#servicos {
+  background-color: #F3F7FA !important;
+  color: #263548 !important;
+}
+#servicos .eyebrow,
+section:not(.dark) > .wrap > .eyebrow {
+  display: inline-block;
+  color: #075E58 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+#servicos > .wrap > h2,
+section:not(.dark) > .wrap > h2 {
+  color: #0F2A5A !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+#servicos > .wrap > .lead,
+section:not(.dark) > .wrap > .lead {
+  color: #263548 !important;
+  opacity: 1 !important;
+}
+section.dark > .wrap > .eyebrow {
+  color: #BDF6EC !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+section.dark > .wrap > h2 {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}
+/* Reforço para qualquer conteúdo textual dentro da área de serviços. */
+#servicos .card h3,
+#servicos .services-accordion .accordion-button {
+  color: #0F2A5A !important;
+}
+#servicos .card,
+#servicos .services-accordion .accordion-body {
+  color: #263548 !important;
+}
+#servicos .card small,
+#servicos .service-number {
+  color: #075E58 !important;
+}
+#servicos .scope-card,
+#servicos .scope-card h3,
+#servicos .scope-card small {
+  color: #FFFFFF !important;
+}
+#servicos .scope-card small { color: #BDF6EC !important; }
+
 </style>
 </head>
 <body>
-
 <nav class="nav">
-  <div class="wrap">
-    <a class="brand" href="#inicio">TMT <span>Engenharia Elétrica</span></a> 
-    <ul id="menu-links">
-      <li><a class="l" href="#servicos">Serviços</a></li>
-      <li><a class="l" href="#projetos">Projetos</a></li>
-      <li><a class="l" href="#sobre">Sobre</a></li>
-      <li><a class="l" href="#avaliacoes">Avaliações</a></li>
-      <li><a class="l" href="#contato">Contato</a></li>
-    </ul>
-    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu-links"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4" cy="6" r="2"/><circle cx="4" cy="12" r="2"/><circle cx="4" cy="18" r="2"/><rect x="9" y="5" width="13" height="2" rx="1"/><rect x="9" y="11" width="13" height="2" rx="1"/><rect x="9" y="17" width="13" height="2" rx="1"/></svg></button>
-  </div>
+<div class="wrap">
+<a class="brand" href="#inicio">TMT <span>Engenharia</span></a>
+<ul id="menu-links">
+<li><a class="l" href="#servicos">Serviços</a></li>
+<li><a class="l" href="#projetos">Projetos</a></li>
+<li><a class="l" href="#sobre">Sobre</a></li>
+<li><a class="l" href="#avaliacoes">Avaliações</a></li>
+<li><a class="l" href="#contato">Contato</a></li>
+</ul>
+<button aria-controls="menu-links" aria-expanded="false" aria-label="Menu" class="menu-btn" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="4" cy="6" r="2"></circle><circle cx="4" cy="12" r="2"></circle><circle cx="4" cy="18" r="2"></circle><rect height="2" rx="1" width="13" x="9" y="5"></rect><rect height="2" rx="1" width="13" x="9" y="11"></rect><rect height="2" rx="1" width="13" x="9" y="17"></rect></svg></button>
+</div>
 </nav>
-
 <header class="hero" id="inicio">
-  <div class="wrap">
-    <div class="txt">
-      <h1>Parceria que conecta, tecnologia que movimenta.</h1>
-      <p>Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
-      <a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a>
-    </div>
-    <div class="logo"><img src="assets/logo.png" width="380" height="380" alt="TMT Engenharia"></div>
-  </div>
+<div class="wrap">
+<div class="txt">
+<h1>Parceria que conecta, tecnologia que movimenta.</h1>
+<p>Projetos elétricos e eletrônicos, vistorias técnicas e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
+<a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." rel="noopener" target="_blank">Solicitar orçamento pelo WhatsApp</a>
+</div>
+<div class="logo"><img alt="TMT Engenharia" height="380" src="assets/logo.png" width="380"/></div>
+</div>
 </header>
-
 <section class="dark" id="numeros">
-  <div class="wrap">
-    <div class="eyebrow">Resultados em números</div>
-    <h2>Experiência em projetos de todos os portes</h2>
-    <p class="lead">Projetos concluídos, além dos cases apresentados neste site.</p>
-    <div class="total">
-      <div class="n">35</div>
-      <div class="t">
-        <strong>trabalhos técnicos entregues, entre projetos, painéis, perícias e vistorias</strong>
-        <div class="chips">
-          <span><b>6</b> instalações elétricas prediais</span>
-          <span><b>3</b> Projetos SPDA</span>
-          <span><b>3</b> projetos industriais</span>
-          <span><b>2</b> painéis de comando</span>
-          <span><b>21</b> perícias e vistorias</span>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="eyebrow">Resultados em números</div>
+<h2>Experiência em projetos de todos os portes</h2>
+<p class="lead">Projetos concluídos, além dos cases apresentados neste site.</p>
+<div class="total">
+<div class="n">35</div>
+<div class="t">
+<strong>trabalhos técnicos entregues, entre projetos, painéis, perícias e vistorias</strong>
+<div class="chips">
+<span><b>6</b> instalações elétricas prediais</span>
+<span><b>3</b> Projetos SPDA</span>
+<span><b>3</b> projetos industriais</span>
+<span><b>2</b> painéis de comando</span>
+<span><b>21</b> perícias e vistorias</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <section class="tint" id="servicos">
-  <div class="wrap">
-    <div class="eyebrow">Serviços</div>
-    <h2>Soluções em engenharia elétrica</h2>
-    <p class="lead">Atuamos em projeto, perícias e vistorias, cobrindo desde instalações prediais até subestações e painéis de média e baixa tensão.</p>
-    <div class="grid g3">
-      <div class="card"><small>01</small><h3>Instalações elétricas</h3>Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.</div>
-      <div class="card"><small>02</small><h3>Elétrica industrial</h3>Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.</div>
-      <div class="card"><small>03</small><h3>Subestações</h3>Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.</div>
-      <div class="card"><small>04</small><h3>SPDA (para-raios)</h3>Projeto de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, conforme a NBR 5419.</div>
-      <div class="card"><small>05</small><h3>Automação residencial</h3>Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div>
-      <div class="card"><small>06</small><h3>Painéis de comando e potência</h3>Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div>
-      <div class="card"><small>07</small><h3>Perícias e vistorias</h3>Laudos e inspeções técnicas para verificar conformidade, causas de falhas e regularização.</div>
-      <div class="card"><small>08</small><h3>Consultorias</h3>Apoio técnico para decisões, adequações, ampliações e análise de projetos.</div>
-      <div class="card" style="background:var(--navy);border-top-color:var(--teal);color:#dbe6f3"><small>ESCOPO</small><h3 style="color:#fff">Projetos e avaliações técnicas</h3>A TMT Engenharia atua no desenvolvimento de projetos elétricos e na realização de vistorias e perícias técnicas, avaliando as condições das instalações, sua conformidade com as normas aplicáveis e possíveis causas de falhas.</div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="eyebrow">Serviços</div>
+<h2>Soluções em engenharia</h2>
+<p class="lead">Projetos elétricos e eletrônicos, além de vistorias técnicas e perícias em instalações.</p>
+<div class="grid g3 services-grid d-none d-md-grid"><div class="card"><small>01</small><h3>Instalações elétricas</h3>Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.</div><div class="card"><small>02</small><h3>Elétrica industrial</h3>Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.</div><div class="card"><small>03</small><h3>Subestações</h3>Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.</div><div class="card"><small>04</small><h3>SPDA (para-raios)</h3>Projeto de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, conforme a NBR 5419.</div><div class="card"><small>05</small><h3>Automação residencial</h3>Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div><div class="card"><small>06</small><h3>Painéis de comando e potência</h3>Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div><div class="card"><small>07</small><h3>Vistorias técnicas e perícias</h3>Inspeções, análises técnicas e laudos para avaliar condições, conformidade e possíveis causas de falhas.</div><div class="card scope-card" style="background:var(--navy);border-top-color:var(--teal);color:#dbe6f3"><small>ESCOPO</small><h3 style="color:#fff">Escopo de atuação</h3>A TMT desenvolve projetos elétricos e eletrônicos e realiza vistorias técnicas e perícias de engenharia. Não oferece fiscalização nem acompanhamento contínuo da execução de obras.</div></div><div class="accordion services-accordion d-md-none" id="servicesAccordion"><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service1" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service1" data-bs-toggle="collapse" type="button"><span class="service-number">01</span>Instalações elétricas</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service1"><div class="accordion-body">Projetos para residências, edifícios e estabelecimentos comerciais, com plantas, diagramas, quadros de cargas e memorial.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service2" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service2" data-bs-toggle="collapse" type="button"><span class="service-number">02</span>Elétrica industrial</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service2"><div class="accordion-body">Projetos para plantas e processos industriais, pensados para segurança, continuidade da operação e manutenção.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service3" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service3" data-bs-toggle="collapse" type="button"><span class="service-number">03</span>Subestações</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service3"><div class="accordion-body">Projeto de subestações em média tensão, com transformador, proteção, medição e correção de fator de potência.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service4" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service4" data-bs-toggle="collapse" type="button"><span class="service-number">04</span>SPDA (para-raios)</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service4"><div class="accordion-body">Projeto de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, conforme a NBR 5419.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service5" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service5" data-bs-toggle="collapse" type="button"><span class="service-number">05</span>Automação residencial</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service5"><div class="accordion-body">Projeto de automação para residências, integrando iluminação, cenas e controle de forma prática e segura.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service6" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service6" data-bs-toggle="collapse" type="button"><span class="service-number">06</span>Painéis de comando e potência</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service6"><div class="accordion-body">Projeto de CCM, QGBT e quadros de distribuição, com layout, dimensionamento e especificação dos componentes.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service7" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service7" data-bs-toggle="collapse" type="button"><span class="service-number">07</span>Projetos eletrônicos e automação</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service7"><div class="accordion-body">Desenvolvimento de soluções e projetos eletroeletrônicos, comandos e sistemas de automação conforme o escopo contratado.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service8" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service8" data-bs-toggle="collapse" type="button"><span class="service-number">08</span>Vistorias técnicas e perícias</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service8"><div class="accordion-body">Inspeções, análises técnicas e laudos para avaliar condições, conformidade e possíveis causas de falhas.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button aria-controls="service9" aria-expanded="false" class="accordion-button collapsed" data-bs-target="#service9" data-bs-toggle="collapse" type="button"><span class="service-number">09</span>Escopo de atuação</button></h3><div class="accordion-collapse collapse" data-bs-parent="#servicesAccordion" id="service9"><div class="accordion-body">A TMT desenvolve projetos elétricos e eletrônicos e realiza vistorias técnicas e perícias de engenharia. Não oferece fiscalização nem acompanhamento contínuo da execução de obras.</div></div></div></div>
+</div>
 </section>
-
 <section id="projetos" style="padding-bottom:10px">
-  <div class="wrap">
-    <div class="eyebrow">Projetos</div>
-    <h2>Projetos selecionados</h2>
-    <p class="lead" style="margin-bottom:40px">Uma amostra de trabalhos da TMT. Por respeito à confidencialidade, os clientes não são identificados.</p>
-
-    <div class="proj-ctrl">
-      <button type="button" class="pc-prev" aria-label="Projeto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <span class="pc-count" aria-live="polite">1 / 5</span>
-      <button type="button" class="pc-next" aria-label="Próximo projeto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-    <div class="proj-track" id="proj-track">
-
-    <div><div class="proj">
-      <div>
-        <h3>Instalações elétricas de supermercado</h3>
-        <p>Projeto elétrico completo de edificação comercial, com iluminação, tomadas, distribuição e diagramas de quadros.</p>
-        <div class="ficha"><div><b>Região</b><span>Guarapuava/PR</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Instalações elétricas comerciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Projeto em 8 pranchas formato A0</li><li>Plantas, notas, quadros de cargas e diagramas</li><li>Iluminação distribuída em malha na área de vendas</li></ul>
-      </div>
-      <figure><img src="assets/projeto-supermercado.jpg" width="900" height="636" loading="lazy" alt="Prancha do projeto elétrico de supermercado"></figure>
-    </div></div>
-
-    <div><div class="proj">
-      <div>
-        <h3>Edifício residencial de 4 pavimentos</h3>
-        <p>Projeto executivo das instalações elétricas de edifício residencial, com unidades autônomas, áreas comuns e esquema vertical.</p>
-        <div class="ficha"><div><b>Região</b><span>Dourados/MS</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Instalações elétricas residenciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Projeto executivo em 4 pranchas formato A0</li><li>Planta por pavimento com apartamentos e circulação</li><li>Esquema vertical e quadro de circuitos</li></ul>
-      </div>
-      <figure><img src="assets/projeto-edificio.jpg" width="600" height="822" loading="lazy" alt="Planta do projeto elétrico do edifício residencial"></figure>
-    </div></div>
-
-    <div><div class="proj">
-      <div>
-        <h3>Subestação compacta 13,8 kV / 380 V</h3>
-        <p>Projeto de subestação compacta abrigada, com compartimentos de alta tensão, transformador e baixa tensão.</p>
-        <div class="ficha"><div><b>Região</b><span>Joinville/SC</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Subestações em média tensão</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Transformador a óleo de 1.000 kVA</li><li>Banco de capacitores 6 × 300 kVAR em 380 V</li><li>Disjuntor geral de baixa tensão</li><li>Módulo de 3,12 m × 2,45 m</li></ul>
-      </div>
-      <figure><img src="assets/projeto-subestacao.jpg" width="900" height="636" loading="lazy" alt="Prancha do projeto da subestação compacta"></figure>
-    </div></div>
-
-    <div><div class="proj">
-      <div>
-        <h3>CCM e QGBT em painel de 4 colunas</h3>
-        <p>Projeto de painel de comando e potência que reúne centro de controle de motores (CCM) e quadro geral de baixa tensão (QGBT).</p>
-        <div class="ficha"><div><b>Região</b><span>Matelândia/PR</span></div><div><b>Atuação</b><span>Projeto e vistoria</span></div><div><b>Especialidade</b><span>Painéis de comando e potência</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Dimensionado para até 650 kVA</li><li>Carga atual de 378 kVA, com folga para expansão</li><li>Disjuntores ABB Tmax e disjuntor aberto E3S</li><li>Painel de 3.300 × 2.200 mm</li></ul>
-      </div>
-      <figure><img src="assets/projeto-painel.jpg" width="900" height="636" loading="lazy" alt="Prancha do painel CCM e QGBT"></figure>
-    </div></div>
-
-    <div><div class="proj">
-      <div>
-        <h3>SPDA de edifício de 11 pavimentos</h3>
-        <p>Projeto de proteção contra descargas atmosféricas de edifício de 11 pavimentos, com captação, descidas pela estrutura, equipotencialização e prancha de detalhamento.</p>
-        <div class="ficha"><div><b>Região</b><span>Cascavel/PR</span></div><div><b>Atuação</b><span>Projeto</span></div><div><b>Especialidade</b><span>SPDA (para-raios)</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
-        <ul><li>Projeto em 7 pranchas formato A0, com prancha de detalhamento</li><li>Para-raios tipo Franklin em mastro de 6 m, com sinalizador noturno</li><li>Descidas pelo vergalhão (CA-25) das estruturas e aterramento nos pilares</li><li>Anel de equipotencialização e caixa de equalização (LEP/TAP) ligada a elevadores, incêndio e gás</li></ul>
-      </div>
-      <figure><img src="assets/projeto-spda.jpg" width="900" height="636" loading="lazy" alt="Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares"></figure>
-    </div></div>
-
-    </div><!-- /proj-track -->
-  </div>
+<div class="wrap">
+<div class="eyebrow">Projetos</div>
+<h2>Projetos selecionados</h2>
+<p class="lead" style="margin-bottom:40px">Uma amostra de trabalhos da TMT. Por respeito à confidencialidade, os clientes não são identificados.</p>
+<div class="proj-ctrl">
+<button aria-label="Projeto anterior" class="pc-prev" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M15 5l-7 7 7 7"></path></svg></button>
+<span aria-live="polite" class="pc-count">1 / 5</span>
+<button aria-label="Próximo projeto" class="pc-next" type="button"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
+</div>
+<div class="proj-track" id="proj-track">
+<div><div class="proj">
+<div>
+<h3>Instalações elétricas de supermercado</h3>
+<p>Projeto elétrico completo de edificação comercial, com iluminação, tomadas, distribuição e diagramas de quadros.</p>
+<div class="ficha"><div><b>Região</b><span>Guarapuava/PR</span></div><div><b>Atuação</b><span>Projeto elétrico</span></div><div><b>Especialidade</b><span>Instalações elétricas comerciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+<ul><li>Projeto em 8 pranchas formato A0</li><li>Plantas, notas, quadros de cargas e diagramas</li><li>Iluminação distribuída em malha na área de vendas</li></ul>
+</div>
+<figure><img alt="Prancha do projeto elétrico de supermercado" height="636" loading="lazy" src="assets/projeto-supermercado.jpg" width="900"/></figure>
+</div></div>
+<div><div class="proj">
+<div>
+<h3>Edifício residencial de 4 pavimentos</h3>
+<p>Projeto executivo das instalações elétricas de edifício residencial, com unidades autônomas, áreas comuns e esquema vertical.</p>
+<div class="ficha"><div><b>Região</b><span>Dourados/MS</span></div><div><b>Atuação</b><span>Projeto elétrico</span></div><div><b>Especialidade</b><span>Instalações elétricas residenciais</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+<ul><li>Projeto executivo em 4 pranchas formato A0</li><li>Planta por pavimento com apartamentos e circulação</li><li>Esquema vertical e quadro de circuitos</li></ul>
+</div>
+<figure><img alt="Planta do projeto elétrico do edifício residencial" height="822" loading="lazy" src="assets/projeto-edificio.jpg" width="600"/></figure>
+</div></div>
+<div><div class="proj">
+<div>
+<h3>Subestação compacta 13,8 kV / 380 V</h3>
+<p>Projeto de subestação compacta abrigada, com compartimentos de alta tensão, transformador e baixa tensão.</p>
+<div class="ficha"><div><b>Região</b><span>Joinville/SC</span></div><div><b>Atuação</b><span>Projeto elétrico</span></div><div><b>Especialidade</b><span>Subestações em média tensão</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+<ul><li>Transformador a óleo de 1.000 kVA</li><li>Banco de capacitores 6 × 300 kVAR em 380 V</li><li>Disjuntor geral de baixa tensão</li><li>Módulo de 3,12 m × 2,45 m</li></ul>
+</div>
+<figure><img alt="Prancha do projeto da subestação compacta" height="636" loading="lazy" src="assets/projeto-subestacao.jpg" width="900"/></figure>
+</div></div>
+<div><div class="proj">
+<div>
+<h3>CCM e QGBT em painel de 4 colunas</h3>
+<p>Projeto de painel de comando e potência que reúne centro de controle de motores (CCM) e quadro geral de baixa tensão (QGBT).</p>
+<div class="ficha"><div><b>Região</b><span>Matelândia/PR</span></div><div><b>Atuação</b><span>Projeto elétrico</span></div><div><b>Especialidade</b><span>Painéis de comando e potência</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+<ul><li>Dimensionado para até 650 kVA</li><li>Carga atual de 378 kVA, com folga para expansão</li><li>Disjuntores ABB Tmax e disjuntor aberto E3S</li><li>Painel de 3.300 × 2.200 mm</li></ul>
+</div>
+<figure><img alt="Prancha do painel CCM e QGBT" height="636" loading="lazy" src="assets/projeto-painel.jpg" width="900"/></figure>
+</div></div>
+<div><div class="proj">
+<div>
+<h3>SPDA de edifício de 11 pavimentos</h3>
+<p>Projeto de proteção contra descargas atmosféricas de edifício de 11 pavimentos, com captação, descidas pela estrutura, equipotencialização e prancha de detalhamento.</p>
+<div class="ficha"><div><b>Região</b><span>Cascavel/PR</span></div><div><b>Atuação</b><span>Projeto elétrico</span></div><div><b>Especialidade</b><span>SPDA (para-raios)</span></div><div><b>Cliente</b><span>Confidencial</span></div></div>
+<ul><li>Projeto em 7 pranchas formato A0, com prancha de detalhamento</li><li>Para-raios tipo Franklin em mastro de 6 m, com sinalizador noturno</li><li>Descidas pelo vergalhão (CA-25) das estruturas e aterramento nos pilares</li><li>Anel de equipotencialização e caixa de equalização (LEP/TAP) ligada a elevadores, incêndio e gás</li></ul>
+</div>
+<figure><img alt="Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares" height="636" loading="lazy" src="assets/projeto-spda.jpg" width="900"/></figure>
+</div></div>
+</div><div class="projects-desktop d-none d-md-grid" id="projectsDesktop"><div aria-label="Selecionar projeto" class="project-selector" role="tablist"></div><div aria-live="polite" class="project-detail"></div></div><!-- /proj-track -->
+</div>
 </section>
-
 <section class="lt" id="sobre">
-  <div class="wrap">
-    <div class="eyebrow">Sobre a TMT</div>
-    <h2>Engenharia elétrica com proximidade e rigor técnico</h2>
-    <p class="lead">A TMT Engenharia reúne experiência em projetos elétricos para residências, comércios e indústrias, com obras em diferentes estados do Brasil. Aqui, cada projeto é conduzido do início ao fim pelo próprio engenheiro responsável, sem intermediários: você tem comunicação direta, respostas rápidas e soluções técnicas alinhadas à realidade da sua obra.</p>
-    <div class="grid g4 steps">
-      <div class="card"><h3>Conversa inicial</h3>Entendemos sua necessidade e as características da obra.</div>
-      <div class="card"><h3>Projeto</h3>Desenvolvemos o projeto técnico com clareza e atenção às normas.</div>
-      <div class="card"><h3>Avaliação técnica</h3>Avaliamos o "as build" para garantir fidelidade ao projeto.</div>
-      <div class="card"><h3>Entrega</h3>Documentação organizada e suporte para dúvidas.</div>
-    </div>
-    <div class="grid g4" style="margin-top:18px">
-      <div class="card"><h3>Segurança</h3>Instalações bem projetadas protegem pessoas e patrimônio.</div>
-      <div class="card"><h3>Clareza</h3>Projetos organizados e fáceis de executar.</div>
-      <div class="card"><h3>Proximidade</h3>Atendimento direto e transparente.</div>
-      <div class="card"><h3>Tecnologia</h3>Soluções atuais, aplicadas com critério.</div>
-    </div>
-  </div>
+<div class="wrap"><div class="eyebrow">Sobre a TMT</div><h2>Engenharia com proximidade e rigor técnico</h2><p class="lead"><span class="desktop-copy">A TMT Engenharia desenvolve projetos elétricos e eletrônicos e realiza vistorias técnicas e perícias de engenharia. Cada trabalho é conduzido diretamente pelo engenheiro responsável, com comunicação clara, análise técnica criteriosa e soluções adequadas à necessidade apresentada.</span><span class="mobile-copy">Projetos elétricos e eletrônicos, vistorias e perícias com contato direto com o engenheiro responsável.</span></p><h3 class="subsection-title">Como conduzimos cada trabalho</h3><div class="project-timeline"><article class="timeline-step"><span class="timeline-number">01</span><div><h4>Conversa inicial</h4><p>Entendemos a necessidade, o objetivo e as informações disponíveis.</p><details><summary>Observações desta etapa</summary><p>São definidos o tipo de serviço, a finalidade do trabalho, os documentos necessários e os limites iniciais do escopo.</p></details></div></article><article class="timeline-step"><span class="timeline-number">02</span><div><h4>Levantamento e análise</h4><p>Organizamos os dados técnicos e avaliamos as condições relevantes.</p><details><summary>Observações desta etapa</summary><p>Conforme o serviço, podem ser analisadas plantas, documentos, características da instalação e informações obtidas em vistoria técnica contratada.</p></details></div></article><article class="timeline-step"><span class="timeline-number">03</span><div><h4>Desenvolvimento técnico</h4><p>Elaboramos o projeto, laudo ou parecer conforme o escopo contratado.</p><details><summary>Observações desta etapa</summary><p>O desenvolvimento considera os requisitos aplicáveis, as normas pertinentes e as condições específicas informadas ou verificadas.</p></details></div></article><article class="timeline-step"><span class="timeline-number">04</span><div><h4>Entrega</h4><p>Apresentamos a documentação técnica e esclarecemos os pontos do trabalho.</p><details><summary>Observações desta etapa</summary><p>A entrega contempla os documentos previstos na proposta e no escopo contratado. Não inclui fiscalização ou acompanhamento contínuo da execução da obra.</p></details></div></article></div><h3 class="subsection-title values-heading">Missão, visão e valores</h3><div class="identity-grid"><article class="identity-card"><span class="identity-kicker">01 · PROPÓSITO</span><h4>Missão</h4><p>Desenvolver projetos elétricos e eletrônicos e realizar vistorias e perícias com responsabilidade, clareza e rigor técnico, contribuindo para instalações mais seguras e decisões bem fundamentadas.</p></article><article class="identity-card"><span class="identity-kicker">02 · DIREÇÃO</span><h4>Visão</h4><p>Ser reconhecida em todo o Brasil pela qualidade técnica, confiabilidade e excelência na elaboração de projetos elétricos e eletrônicos e na realização de vistorias e perícias, mantendo uma relação próxima e transparente com cada cliente.</p></article><article class="identity-card identity-values"><span class="identity-kicker">03 · PRINCÍPIOS</span><h4>Valores</h4><div class="values-grid"><div><b>Segurança</b><span>Critério técnico para proteger pessoas e patrimônio.</span></div><div><b>Clareza</b><span>Informações e documentos objetivos e compreensíveis.</span></div><div><b>Proximidade</b><span>Contato direto e comunicação transparente.</span></div><div><b>Tecnologia</b><span>Uso criterioso de ferramentas e soluções atuais.</span></div><div><b>Atendimento humanizado</b><span>Escuta, respeito e atenção às necessidades de cada cliente.</span></div></div></article></div></div>
 </section>
-
 <section class="dark" id="responsavel">
-  <div class="wrap rt">
-    <div class="foto"><img src="assets/vitor.jpg" width="480" height="480" loading="lazy" alt="Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia"></div>
-    <div class="t">
-      <div class="eyebrow">Responsável técnico</div>
-      <h2>Vitor Thimóteo Daubermann</h2>
-      <p><b style="color:#fff">Engenheiro Eletrônico</b></p>
-      <span class="crea">CREA-PR 232367</span>
-      <p style="margin-top:12px">Vitor é o responsável técnico da TMT Engenharia e acompanha pessoalmente cada projeto. Atua em instalações elétricas prediais, elétrica industrial, subestações, SPDA, painéis de comando e potência, automação residencial, perícias, vistorias e consultorias.</p>
-    </div>
-  </div>
+<div class="wrap rt">
+<div class="foto"><img alt="Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia" height="480" loading="lazy" src="assets/vitor.jpg" width="480"/></div>
+<div class="t">
+<div class="eyebrow">Responsável técnico</div>
+<h2>Vitor Thimóteo Daubermann</h2>
+<p><b style="color:#fff">Engenheiro Eletrônico</b></p>
+<span class="crea">CREA-PR 232367</span>
+<p style="margin-top:12px">Vitor é o responsável técnico da TMT Engenharia e conduz pessoalmente os trabalhos contratados. Atua no desenvolvimento de projetos elétricos e eletrônicos e na realização de vistorias técnicas e perícias de engenharia.</p>
+</div>
+</div>
 </section>
-
 <section class="lt" id="avaliacoes">
-  <div class="wrap">
-    <div class="eyebrow">Avaliações</div>
-    <h2>O que nossos clientes dizem</h2>
-    <p class="lead">Avaliações reais de clientes no Google.</p>
-
-    <!-- Elfsight Google Reviews | Untitled Google Reviews -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-f1d5e788-32c8-4ea9-adb0-815481439b15" data-elfsight-app-lazy></div>
-  </div>
+<div class="wrap">
+<div class="eyebrow">Avaliações</div>
+<h2>O que nossos clientes dizem</h2>
+<p class="lead">Avaliações reais de clientes no Google.</p>
+<!-- Elfsight Google Reviews | Untitled Google Reviews -->
+<script async="" src="https://elfsightcdn.com/platform.js"></script>
+<div class="elfsight-app-f1d5e788-32c8-4ea9-adb0-815481439b15" data-elfsight-app-lazy=""></div>
+</div>
 </section>
-
-<section id="contato" class="dark" style="background:#0A1E42">
-  <div class="wrap contact">
-    <div class="eyebrow">Contato</div>
-    <h2>Vamos conversar sobre o seu projeto</h2>
-    <p class="lead">Conte o que você precisa e retornaremos o mais rápido possível. Atendemos todo o Brasil.</p>
-    <a class="row" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener"><b>WhatsApp</b><span>(45) 9 8823-9581</span></a>
-    <a class="row" href="https://www.instagram.com/tmt.engenhariaeletrica" target="_blank" rel="noopener"><b>Instagram</b><span>@tmt.engenhariaeletrica</span></a>
-    <a class="row" href="mailto:tmtengenhariaeletrica@gmail.com?subject=Or%C3%A7amento%20-%20TMT%20Engenharia"><b>E-mail</b><span>tmtengenhariaeletrica@gmail.com</span></a>
-    <div class="row"><b>Sede</b><span>Cascavel/PR · atendimento em todo o Brasil</span></div>
-    <p style="margin:22px 0 40px"><a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Solicitar orçamento</a></p>
-    <h2 style="font-size:22px">Perguntas frequentes</h2><br>
-    <details><summary>Atendem outras cidades e estados?</summary><p>Sim. Atuamos em todo o Brasil, com projetos feitos de forma remota e fiscalização conforme a necessidade da obra.</p></details>
-    <details><summary>O que preciso enviar para pedir um orçamento?</summary><p>Local da obra, tipo de serviço, planta arquitetônica (se houver) e uma breve descrição. Se ainda não tiver tudo, envie o que tiver e conversamos.</p></details>
-    <details><summary>Vocês fazem projeto e acompanham a obra?</summary><p>A TMT Engenharia não realiza acompanhamento contínuo ou fiscalização da execução de obras. Nossa atuação nesse segmento concentra-se na elaboração de projetos, vistorias técnicas e perícias de engenharia.</p></details>
-    <details><summary>Fazem projeto de SPDA (para-raios)?</summary><p>Sim. Projetamos o sistema de proteção contra descargas atmosféricas, com captação, descidas, aterramento e equipotencialização, para edifícios residenciais, comerciais e industriais.</p></details>
-    <details><summary>Fazem perícias e vistorias?</summary><p>Sim. Realizamos vistorias e perícias em instalações elétricas, com inspeções, análises técnicas e emissão de laudos, conforme a finalidade e o escopo contratado.</p></details>
-    <details><summary>Os clientes aparecem no site?</summary><p>Apenas se o cliente autorizar. Preservamos a confidencialidade e mostramos a região e características técnicas dos projetos.</p></details>
-  </div>
+<section class="dark" id="contato" style="background:#0A1E42">
+<div class="wrap contact">
+<div class="eyebrow">Contato</div>
+<h2>Vamos conversar sobre o seu projeto</h2>
+<p class="lead">Conte o que você precisa e retornaremos o mais rápido possível. Atendemos todo o Brasil.</p>
+<a class="row" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." rel="noopener" target="_blank"><b>WhatsApp</b><span>(45) 9 8823-9581</span></a>
+<a class="row" href="https://www.instagram.com/tmt.engenhariaeletrica" rel="noopener" target="_blank"><b>Instagram</b><span>@tmt.engenhariaeletrica</span></a>
+<a class="row" href="mailto:tmtengenhariaeletrica@gmail.com?subject=Or%C3%A7amento%20-%20TMT%20Engenharia"><b>E-mail</b><span>tmtengenhariaeletrica@gmail.com</span></a>
+<div class="row"><b>Sede</b><span>Cascavel/PR · atendimento em todo o Brasil</span></div>
+<p style="margin:22px 0 40px"><a class="btn" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." rel="noopener" target="_blank">Solicitar orçamento</a></p>
+<h2 style="font-size:22px">Perguntas frequentes</h2><br/>
+<details><summary>Atendem outras cidades e estados?</summary><p>Sim. Atendemos todo o Brasil. Projetos podem ser desenvolvidos remotamente; vistorias e perícias são realizadas conforme a localização e o escopo contratado.</p></details>
+<details><summary>O que preciso enviar para pedir um orçamento?</summary><p>Local da obra, tipo de serviço, planta arquitetônica (se houver) e uma breve descrição. Se ainda não tiver tudo, envie o que tiver e conversamos.</p></details>
+<details><summary>A TMT acompanha ou fiscaliza a execução da obra?</summary><p>Não. A TMT não oferece fiscalização nem acompanhamento contínuo da execução de obras. A atuação é limitada à elaboração de projetos elétricos e eletrônicos, vistorias técnicas e perícias de engenharia.</p></details>
+<details><summary>Quais tipos de projetos são desenvolvidos?</summary><p>Desenvolvemos projetos elétricos e eletrônicos, incluindo instalações prediais e industriais, subestações, SPDA, painéis de comando e potência e soluções de automação, conforme as atribuições profissionais e o escopo contratado.</p></details>
+<details><summary>Fazem perícias e vistorias?</summary><p>Sim. Realizamos vistorias e perícias em instalações elétricas, com inspeções, análises técnicas e emissão de laudos, conforme a finalidade e o escopo contratado.</p></details>
+<details><summary>Os clientes aparecem no site?</summary><p>Apenas se o cliente autorizar. Preservamos a confidencialidade e mostramos a região e características técnicas dos projetos.</p></details>
+</div>
 </section>
-
 <footer>
-   <div class="wrap">TMT Engenharia Elétrica · VTD Projetos Elétricos LTDA · CNPJ 69.319.550/0001-74<br>Cascavel/PR · Responsável técnico: Vitor Thimóteo Daubermann · CREA-PR 232367<br>© 2026 TMT Engenharia Elétrica</div>
+<div class="wrap">TMT Engenharia Elétrica · VTD Projetos Elétricos LTDA · CNPJ 69.319.550/0001-74<br/>Cascavel/PR · Responsável técnico: Vitor Thimóteo Daubermann · CREA-PR 232367<br/>© 2026 TMT Engenharia Elétrica</div>
 </footer>
-
-<script>
-(function(){
+<script>(function(){
   var nav=document.querySelector('.nav'),btn=document.querySelector('.menu-btn');
-  function set(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false')}
-  btn.addEventListener('click',function(e){e.stopPropagation();set(!nav.classList.contains('open'))});
-  Array.prototype.forEach.call(nav.querySelectorAll('ul a'),function(a){a.addEventListener('click',function(){set(false)})});
-  document.addEventListener('click',function(e){if(!nav.contains(e.target))set(false)});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
-  window.addEventListener('resize',function(){if(window.innerWidth>760)set(false)});
+  if(nav&&btn){
+    function set(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false')}
+    btn.addEventListener('click',function(e){e.stopPropagation();set(!nav.classList.contains('open'))});
+    Array.prototype.forEach.call(nav.querySelectorAll('ul a'),function(a){a.addEventListener('click',function(){set(false)})});
+    document.addEventListener('click',function(e){if(!nav.contains(e.target))set(false)});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
+    window.addEventListener('resize',function(){if(window.innerWidth>760)set(false)});
+  }
 })();
 
 (function(){
-  var tr=document.getElementById('proj-track'); if(!tr) return;
-  var items=Array.prototype.slice.call(tr.children),
-      prev=document.querySelector('.pc-prev'),next=document.querySelector('.pc-next'),cnt=document.querySelector('.pc-count');
-  function cur(){var l=tr.scrollLeft,best=0,d=1e9;items.forEach(function(it,i){var x=Math.abs(it.offsetLeft-l);if(x<d){d=x;best=i}});return best}
-  function upd(){var i=cur();prev.disabled=(i===0);next.disabled=(i===items.length-1);cnt.textContent=(i+1)+' / '+items.length}
-  function go(i){i=Math.max(0,Math.min(items.length-1,i));tr.scrollTo({left:items[i].offsetLeft,behavior:'smooth'})}
-  prev.addEventListener('click',function(){go(cur()-1)});
-  next.addEventListener('click',function(){go(cur()+1)});
-  tr.addEventListener('scroll',upd,{passive:true});
-  window.addEventListener('resize',upd);
-  upd();
-})();
-</script>
+  var track=document.getElementById('proj-track');
+  if(!track)return;
+  var cards=Array.prototype.slice.call(track.children);
+  var prev=document.querySelector('.pc-prev'),next=document.querySelector('.pc-next'),count=document.querySelector('.pc-count');
+  function current(){var left=track.scrollLeft,best=0,dist=Infinity;cards.forEach(function(card,i){var d=Math.abs(card.offsetLeft-left);if(d<dist){dist=d;best=i}});return best}
+  function update(){var i=current();if(prev)prev.disabled=i===0;if(next)next.disabled=i===cards.length-1;if(count)count.textContent=(i+1)+' / '+cards.length}
+  function go(i){i=Math.max(0,Math.min(cards.length-1,i));track.scrollTo({left:cards[i].offsetLeft,behavior:'smooth'})}
+  if(prev)prev.addEventListener('click',function(){go(current()-1)});
+  if(next)next.addEventListener('click',function(){go(current()+1)});
+  track.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
 
+  // No desktop, a lista lateral seleciona o detalhe correspondente.
+  var desktop=document.getElementById('projectsDesktop');
+  if(desktop){
+    var selector=desktop.querySelector('.project-selector'),detail=desktop.querySelector('.project-detail');
+    cards.forEach(function(card,i){
+      var content=card.querySelector('.proj');if(!content)return;
+      var heading=content.querySelector('h3');
+      var button=document.createElement('button');button.type='button';button.className='project-select-btn'+(i===0?' active':'');
+      button.setAttribute('role','tab');button.setAttribute('aria-selected',i===0?'true':'false');
+      var small=document.createElement('small');small.textContent='PROJETO '+String(i+1).padStart(2,'0');
+      button.appendChild(small);button.appendChild(document.createTextNode(heading?heading.textContent:'Projeto'));
+      button.addEventListener('click',function(){
+        Array.prototype.forEach.call(selector.children,function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
+        button.classList.add('active');button.setAttribute('aria-selected','true');
+        detail.replaceChildren(content.cloneNode(true));
+      });
+      selector.appendChild(button);
+      if(i===0)detail.appendChild(content.cloneNode(true));
+    });
+  }
+})();</script>
 <script>
 /* TMT Engenharia - seletor de idioma (PT-BR base, EN, ES)
    Este arquivo e JavaScript puro: salve como assets/idiomas.js e NAO cole no index.html.
@@ -388,7 +574,7 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
 
     // Topo
     [`Parceria que conecta, tecnologia que movimenta.`, `Partnership that connects, technology that moves.`, `Alianzas que conectan, tecnología que mueve.`],
-    [`Projetos elétricos, subestações, SPDA, painéis de comando e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.`,
+    [`Projetos elétricos e eletrônicos, vistorias técnicas e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.`,
      `Electrical design, substations, lightning protection (SPDA), control panels and expert inspections, with direct service from the engineer in charge. Based in Cascavel/PR and working throughout the Americas.`,
      `Proyectos eléctricos, subestaciones, SPDA (pararrayos), tableros de control y peritajes, con atención directa del ingeniero responsable. Con sede en Cascavel/PR y presencia en toda América.`],
     [`Solicitar orçamento pelo WhatsApp`, `Request a quote on WhatsApp`, `Solicitar cotización por WhatsApp`],
@@ -511,6 +697,11 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
     [`Anel de equipotencialização e caixa de equalização (LEP/TAP) ligada a elevadores, incêndio e gás`, `Equipotential bonding ring and equalization box (LEP/TAP) connected to elevators, fire systems and gas`, `Anillo de equipotencialización y caja de ecualización (LEP/TAP) conectada a elevadores, incendio y gas`],
     [`Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares`, `SPDA design details: Franklin air terminal, equalization box, bonding and column grounding`, `Detalle del proyecto de SPDA: pararrayos Franklin, caja de ecualización, amarre y puesta a tierra de las columnas`],
 
+    [`Missão, visão e valores`, `Mission, vision and values`, `Misión, visión y valores`],
+    [`01 · PROPÓSITO`, `01 · PURPOSE`, `01 · PROPÓSITO`],
+    [`02 · DIREÇÃO`, `02 · DIRECTION`, `02 · DIRECCIÓN`],
+    [`03 · PRINCÍPIOS`, `03 · PRINCIPLES`, `03 · PRINCIPIOS`],
+    [`Ser reconhecida em todo o Brasil pela qualidade técnica, confiabilidade e excelência na elaboração de projetos elétricos e eletrônicos e na realização de vistorias e perícias, mantendo uma relação próxima e transparente com cada cliente.`, `To be recognized throughout Brazil for technical quality, reliability and excellence in electrical and electronic design, inspections and expert assessments, while maintaining a close and transparent relationship with every client.`, `Ser reconocida en todo Brasil por la calidad técnica, confiabilidad y excelencia en proyectos eléctricos y electrónicos, inspecciones y peritajes, manteniendo una relación cercana y transparente con cada cliente.`],
     // Sobre
     [`Sobre a TMT`, `About TMT`, `Sobre TMT`],
     [`Engenharia elétrica com proximidade e rigor técnico`, `Electrical engineering with closeness and technical rigor`, `Ingeniería eléctrica con cercanía y rigor técnico`],
@@ -565,6 +756,18 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
     [`Os clientes aparecem no site?`, `Are clients shown on the site?`, `¿Los clientes aparecen en el sitio?`],
     [`Apenas se o cliente autorizar. Preservamos a confidencialidade e mostramos a região e características técnicas dos projetos.`, `Only if the client authorizes it. We preserve confidentiality and show the region and technical characteristics of the projects.`, `Solo si el cliente lo autoriza. Preservamos la confidencialidad y mostramos la región y las características técnicas de los proyectos.`],
 
+    [`A TMT desenvolve projetos elétricos e eletrônicos e realiza vistorias técnicas e perícias de engenharia. Cada trabalho é conduzido diretamente pelo engenheiro responsável, com comunicação clara, análise técnica criteriosa e soluções adequadas à necessidade apresentada.`, `TMT develops electrical and electronic designs and performs technical inspections and engineering expert reports. Each assignment is handled directly by the engineer in charge, with clear communication, careful technical analysis and solutions suited to the client's needs.`, `TMT desarrolla proyectos eléctricos y electrónicos y realiza inspecciones técnicas y peritajes de ingeniería. Cada trabajo es conducido directamente por el ingeniero responsable, con comunicación clara, análisis técnico riguroso y soluciones adecuadas a cada necesidad.`],
+    [`Entendemos a necessidade, o objetivo e as informações disponíveis.`, `We understand the need, objective and available information.`, `Entendemos la necesidad, el objetivo y la información disponible.`],
+    [`São definidos o tipo de serviço, a finalidade do trabalho, os documentos necessários e os limites iniciais do escopo.`, `We define the service type, purpose, required documents and initial scope boundaries.`, `Se definen el tipo de servicio, la finalidad del trabajo, los documentos necesarios y los límites iniciales del alcance.`],
+    [`Organizamos os dados técnicos e avaliamos as condições relevantes.`, `We organize technical data and assess relevant conditions.`, `Organizamos los datos técnicos y evaluamos las condiciones relevantes.`],
+    [`Conforme o serviço, podem ser analisadas plantas, documentos, características da instalação e informações obtidas em vistoria técnica contratada.`, `Depending on the service, we may analyze drawings, documents, installation characteristics and information obtained during a contracted technical inspection.`, `Según el servicio, se pueden analizar planos, documentos, características de la instalación e información obtenida en una inspección técnica contratada.`],
+    [`Elaboramos o projeto, laudo ou parecer conforme o escopo contratado.`, `We prepare the design, technical report or expert opinion according to the contracted scope.`, `Elaboramos el proyecto, informe o dictamen conforme al alcance contratado.`],
+    [`O desenvolvimento considera os requisitos aplicáveis, as normas pertinentes e as condições específicas informadas ou verificadas.`, `The work considers applicable requirements, relevant standards and the specific conditions reported or verified.`, `El desarrollo considera los requisitos aplicables, las normas pertinentes y las condiciones específicas informadas o verificadas.`],
+    [`Apresentamos a documentação técnica e esclarecemos os pontos do trabalho.`, `We provide the technical documentation and clarify the work's key points.`, `Presentamos la documentación técnica y aclaramos los puntos del trabajo.`],
+    [`A entrega contempla os documentos previstos na proposta e no escopo contratado. Não inclui fiscalização ou acompanhamento contínuo da execução da obra.`, `Delivery includes the documents specified in the proposal and contracted scope. It does not include construction supervision or continuous site monitoring.`, `La entrega contempla los documentos previstos en la propuesta y el alcance contratado. No incluye supervisión ni seguimiento continuo de la ejecución de la obra.`],
+    [`Projetos elétricos e eletrônicos, além de vistorias técnicas e perícias em instalações.`, `Electrical and electronic designs, as well as technical inspections and expert reports on installations.`, `Proyectos eléctricos y electrónicos, además de inspecciones técnicas y peritajes de instalaciones.`],
+    [`Projetos elétricos e eletrônicos, vistorias técnicas e perícias de engenharia. Cada trabalho é conduzido diretamente pelo engenheiro responsável, com comunicação clara, análise técnica criteriosa e soluções adequadas à necessidade apresentada.`, `Electrical and electronic designs, technical inspections and engineering expert reports. Each assignment is handled directly by the engineer in charge, with clear communication, careful technical analysis and solutions suited to the client's needs.`, `Proyectos eléctricos y electrónicos, inspecciones técnicas y peritajes de ingeniería. Cada trabajo es conducido directamente por el ingeniero responsable, con comunicación clara, análisis técnico riguroso y soluciones adecuadas a cada necesidad.`],
+    [`Desenvolvemos projetos elétricos e eletrônicos, incluindo instalações prediais e industriais, subestações, SPDA, painéis de comando e potência e soluções de automação, conforme as atribuições profissionais e o escopo contratado.`, `We develop electrical and electronic designs, including building and industrial installations, substations, lightning protection, control and power panels, and automation solutions, within professional qualifications and the contracted scope.`, `Desarrollamos proyectos eléctricos y electrónicos, incluidas instalaciones de edificios e industriales, subestaciones, SPDA, tableros de control y potencia y soluciones de automatización, de acuerdo con las atribuciones profesionales y el alcance contratado.`],
     // Rodapé
     [`Cascavel/PR · Responsável técnico: Vitor Thimóteo Daubermann · CREA-PR 232367`, `Cascavel/PR · Technical lead: Vitor Thimóteo Daubermann · CREA-PR 232367`, `Cascavel/PR · Responsable técnico: Vitor Thimóteo Daubermann · CREA-PR 232367`]
   ];
@@ -681,6 +884,5 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   setLang(start);
 })();
 </script>
-
-</body>
+<script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script></body>
 </html>
