@@ -84,6 +84,10 @@ h2{color:var(--navy);font-size:30px;line-height:1.2;margin-bottom:10px}
 .ficha span{color:var(--navy)}
 .proj ul{padding-left:18px;font-size:14px;color:var(--navy)}
 
+/* CARROSSEL (so mobile) */
+.proj-ctrl{display:none}
+.proj-track{position:relative}
+
 /* RESPONSAVEL TECNICO */
 .rt{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
 .rt .foto{width:190px;height:190px;border-radius:50%;border:5px solid var(--teal);overflow:hidden;background:#fff;flex:0 0 auto}
@@ -102,7 +106,8 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
 
 /* CELULAR */
 @media(max-width:760px){
-  .proj{grid-template-columns:1fr;gap:24px;margin-bottom:40px}
+  .proj{grid-template-columns:minmax(0,1fr);gap:24px;margin-bottom:40px}
+  .proj>*{min-width:0}
   .hero{padding:48px 0}
   .hero h1{font-size:30px}
   .hero p{font-size:16px}
@@ -110,6 +115,16 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   h2{font-size:25px}
   section{padding:48px 0}
   .nav .brand{font-size:15px}
+  .proj-ctrl{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .proj-ctrl button{width:44px;height:44px;padding:10px;border:0;border-radius:50%;background:var(--teal);cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .proj-ctrl button:disabled{opacity:.35;cursor:default}
+  .proj-ctrl svg{width:100%;height:100%;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .pc-count{color:var(--navy);font-weight:700;font-size:15px;letter-spacing:1px}
+  #projetos .lead{margin-bottom:20px!important}
+  .proj-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 8px 26px 0}
+  .proj-track::-webkit-scrollbar{display:none}
+  .proj-track>div{flex:0 0 100%;min-width:0;scroll-snap-align:start}
+  .proj{margin-bottom:0}
   .menu-btn{display:block}
   .nav .wrap>ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;overflow:visible;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 10px 20px rgba(0,0,0,.25)}
   .nav.open .wrap>ul{display:flex}
@@ -200,6 +215,13 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
     <h2>Projetos selecionados</h2>
     <p class="lead" style="margin-bottom:40px">Uma amostra de trabalhos da TMT. Por respeito à confidencialidade, os clientes não são identificados.</p>
 
+    <div class="proj-ctrl">
+      <button type="button" class="pc-prev" aria-label="Projeto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <span class="pc-count" aria-live="polite">1 / 5</span>
+      <button type="button" class="pc-next" aria-label="Próximo projeto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+    <div class="proj-track" id="proj-track">
+
     <div><div class="proj">
       <div>
         <h3>Instalações elétricas de supermercado</h3>
@@ -249,6 +271,8 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
       </div>
       <figure><img src="assets/projeto-spda.jpg" width="900" height="636" loading="lazy" alt="Detalhamento do projeto de SPDA: para-raios Franklin, caixa de equalização, amarração e aterramento dos pilares"></figure>
     </div></div>
+
+    </div><!-- /proj-track -->
   </div>
 </section>
 
@@ -330,6 +354,20 @@ footer{background:#0A1E42;color:#9FB4D0;font-size:13px;padding:24px 0;text-align
   document.addEventListener('click',function(e){if(!nav.contains(e.target))set(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
   window.addEventListener('resize',function(){if(window.innerWidth>760)set(false)});
+})();
+
+(function(){
+  var tr=document.getElementById('proj-track'); if(!tr) return;
+  var items=Array.prototype.slice.call(tr.children),
+      prev=document.querySelector('.pc-prev'),next=document.querySelector('.pc-next'),cnt=document.querySelector('.pc-count');
+  function cur(){var l=tr.scrollLeft,best=0,d=1e9;items.forEach(function(it,i){var x=Math.abs(it.offsetLeft-l);if(x<d){d=x;best=i}});return best}
+  function upd(){var i=cur();prev.disabled=(i===0);next.disabled=(i===items.length-1);cnt.textContent=(i+1)+' / '+items.length}
+  function go(i){i=Math.max(0,Math.min(items.length-1,i));tr.scrollTo({left:items[i].offsetLeft,behavior:'smooth'})}
+  prev.addEventListener('click',function(){go(cur()-1)});
+  next.addEventListener('click',function(){go(cur()+1)});
+  tr.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  upd();
 })();
 </script>
 
