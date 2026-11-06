@@ -90,7 +90,8 @@ h3{color:var(--navy);font-weight:700}
 .services-accordion .accordion-item:not(:first-of-type){border-top:1px solid var(--line)}
 .services-accordion .accordion-button{gap:14px;padding:18px 20px;font-weight:700;color:var(--navy);background:#fff;box-shadow:none}
 .services-accordion .accordion-button:not(.collapsed){background:var(--bg-tint)}
-.services-accordion .accordion-button:focus{box-shadow:inset 0 0 0 2px var(--teal)}
+.services-accordion .accordion-button,.services-accordion .accordion-button:focus{border-radius:0;box-shadow:none;outline:0}
+.services-accordion .accordion-item:focus-within{border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
 .service-number{margin-right:0;font-size:.78rem;font-weight:800;letter-spacing:.08em;color:var(--teal-ink)}
 .services-accordion .accordion-body{padding:4px 20px 20px;color:var(--ink-soft)}
 
@@ -113,7 +114,7 @@ h3{color:var(--navy);font-weight:700}
 .proj figure img{width:100%;max-height:520px;object-fit:contain}
 .ficha{margin-bottom:18px;font-size:.92rem}
 .ficha div{display:flex;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
-.ficha b{flex:0 0 110px;padding-top:2px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.ficha b{flex:0 0 128px;padding-top:2px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
 .ficha span{color:var(--navy)}
 .proj ul{display:grid;gap:6px;padding-left:20px;list-style:disc;font-size:.92rem;color:var(--navy)}
 
@@ -127,10 +128,10 @@ h3{color:var(--navy);font-weight:700}
 .timeline-step h4{margin-bottom:6px;font-size:1.05rem;font-weight:800;color:var(--navy)}
 .timeline-step p{font-size:.93rem;color:var(--ink-soft)}
 .timeline-step details{margin-top:10px}
-.timeline-step summary{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:700;color:var(--teal-ink);cursor:pointer;list-style:none}
+.timeline-step summary{display:inline-flex;align-items:center;gap:9px;line-height:1.3;font-size:.85rem;font-weight:700;color:var(--teal-ink);cursor:pointer;list-style:none}
 .timeline-step summary::-webkit-details-marker{display:none}
-.timeline-step summary:after{content:"⌄";font-size:1.15rem;line-height:1;transition:transform .2s}
-.timeline-step details[open] summary:after{transform:rotate(180deg)}
+.timeline-step summary:after{content:"";flex:none;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+.timeline-step details[open] summary:after{transform:translateY(2px) rotate(-135deg)}
 .timeline-step details p{margin-top:10px;padding:12px 14px;border-left:3px solid var(--teal);border-radius:0 6px 6px 0;background:#fff;font-size:.88rem}
 .identity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
 .identity-card{padding:clamp(20px,3vw,28px);border:1px solid #BDCBD8;border-top:4px solid var(--teal);border-radius:var(--radius);background:#fff;box-shadow:0 7px 22px rgba(15,42,90,.06)}
@@ -211,8 +212,9 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
   .identity-values{grid-column:auto}
   .rt{flex-direction:column;align-items:flex-start}
   .rt .foto{width:150px;height:150px}
-  .ficha div{gap:12px}
-  .ficha b{flex-basis:96px}
+  .ficha div{flex-direction:column;gap:3px;padding:10px 0}
+  .ficha b{flex:none;padding-top:0}
+  .ficha span{line-height:1.45}
   .hero .btn-cta,.contact .btn-cta{display:block;text-align:center}
 }
 </style>
