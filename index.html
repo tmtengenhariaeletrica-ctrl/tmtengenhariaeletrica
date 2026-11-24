@@ -57,13 +57,14 @@ h3{color:var(--navy);font-weight:700}
 .menu-btn svg{display:block;width:100%;height:100%;fill:currentColor}
 
 /* ============ 4. TOPO ============ */
-.hero{position:relative;overflow:hidden;padding:clamp(48px,8vw,88px) 0;background:var(--navy);color:#fff}
-.hero:after{content:"";position:absolute;right:-90px;bottom:-110px;width:340px;height:340px;border-radius:50%;background:var(--teal);opacity:.35}
-.hero .wrap{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,5vw,48px)}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:clamp(48px,8vw,88px) 0;background:linear-gradient(135deg,#FFFFFF 0%,var(--bg-tint) 100%);color:var(--navy)}
+.hero:after{content:"";position:absolute;right:-90px;bottom:-110px;width:340px;height:340px;border-radius:50%;background:var(--teal);opacity:.12;z-index:-1}
+.hero .wrap{position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,5vw,48px)}
 .hero .txt{flex:1 1 380px}
-.hero h1{max-width:720px;margin-bottom:20px;font-size:clamp(2rem,1.4rem + 2.8vw,2.9rem);font-weight:800;line-height:1.12;letter-spacing:-.03em}
-.hero p{max-width:640px;margin-bottom:32px;font-size:clamp(1rem,.95rem + .3vw,1.15rem);color:#E1EBF6}
-.hero .logo{flex:0 1 260px;padding:18px;border-radius:var(--radius);background:#fff}
+.hero h1{max-width:720px;margin-bottom:20px;font-size:clamp(2rem,1.4rem + 2.8vw,2.9rem);font-weight:800;line-height:1.12;letter-spacing:-.03em;color:var(--navy)}
+.hero p{max-width:640px;margin-bottom:32px;font-size:clamp(1rem,.95rem + .3vw,1.15rem);color:var(--ink-soft)}
+.hero .logo{flex:0 1 300px}
+.hero .logo img{width:100%;height:auto}
 
 /* ============ 5. NUMEROS ============ */
 .total{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(20px,4vw,40px);padding:clamp(22px,4vw,40px);border-top:4px solid var(--teal);border-radius:6px;background:#15396D}
@@ -160,7 +161,7 @@ h3{color:var(--navy);font-weight:700}
 .partner-card h3{margin-bottom:8px;font-size:1.05rem;line-height:1.3}
 .partner-card p{font-size:.95rem;line-height:1.6;color:var(--ink-soft)}
 .partner-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);margin-top:var(--gap)}
-.partner-box{padding:clamp(20px,3vw,28px);border-radius:var(--radius);background:var(--bg-soft)}
+.partner-box{padding:clamp(20px,3vw,28px);border-radius:var(--radius);background:#fff;border:1px solid var(--line)}
 .partner-box h3{margin-bottom:14px;font-size:1.1rem}
 .partner-tags{display:flex;flex-wrap:wrap;gap:8px}
 .partner-tags li{padding:6px 14px;border:1px solid #B9DCD7;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:var(--navy)}
@@ -228,7 +229,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
   .menu-btn{width:36px;height:36px}
   .partner-cols{grid-template-columns:1fr}
   .partner-cta .btn-cta{display:block;width:100%;text-align:center}
-  .hero .logo{width:150px;margin:0 auto;padding:14px}
+  .hero .logo{width:170px;margin:0 auto}
   .hero p{margin-bottom:24px}
   .chips span{padding:5px 10px;font-size:.78rem}
   .project-timeline{display:flex;flex-direction:column;gap:26px}
@@ -251,9 +252,9 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 <div class="wrap">
 <a class="brand" href="#inicio">TMT <span>Engenharia</span></a>
 <ul id="menu-links">
+<li><a class="l" href="#sobre">Sobre</a></li>
 <li><a class="l" href="#servicos">Serviços</a></li>
 <li><a class="l" href="#projetos">Projetos</a></li>
-<li><a class="l" href="#sobre">Sobre</a></li>
 <li><a class="l" href="#parcerias">Parcerias</a></li>
 <li><a class="l" href="#avaliacoes">Avaliações</a></li>
 <li><a class="l" href="#contato">Contato</a></li>
@@ -268,7 +269,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 <p>Projetos elétricos e eletrônicos, vistorias técnicas e perícias, com atendimento direto do engenheiro responsável. Sediada em Cascavel/PR e atuando em todo o Brasil.</p>
 <a class="btn-cta" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20um%20or%C3%A7amento." rel="noopener" target="_blank">Solicitar orçamento pelo WhatsApp</a>
 </div>
-<div class="logo"><img alt="TMT Engenharia" height="380" src="assets/logo.png" width="380"/></div>
+<div class="logo"><img alt="TMT Engenharia" height="252" src="assets/logo.png" width="330"/></div>
 </div>
 </header>
 <section class="dark" id="numeros">
@@ -290,6 +291,9 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 </div>
 </div>
 </div>
+</section>
+<section class="lt" id="sobre">
+<div class="wrap"><div class="eyebrow">Sobre a TMT</div><h2>Engenharia com proximidade e rigor técnico</h2><p class="lead"><span class="desktop-copy">A TMT Engenharia desenvolve projetos elétricos e eletrônicos e realiza vistorias técnicas e perícias de engenharia. Cada trabalho é conduzido diretamente pelo engenheiro responsável, com comunicação clara, análise técnica criteriosa e soluções adequadas à necessidade apresentada.</span><span class="mobile-copy">Projetos elétricos e eletrônicos, vistorias e perícias com contato direto com o engenheiro responsável.</span></p><h3 class="subsection-title">Como conduzimos cada trabalho</h3><div class="project-timeline"><article class="timeline-step"><span class="timeline-number">01</span><div><h4>Conversa inicial</h4><p>Entendemos a necessidade, o objetivo e as informações disponíveis.</p><details><summary>Observações desta etapa</summary><p>São definidos o tipo de serviço, a finalidade do trabalho, os documentos necessários e os limites iniciais do escopo.</p></details></div></article><article class="timeline-step"><span class="timeline-number">02</span><div><h4>Levantamento e análise</h4><p>Organizamos os dados técnicos e avaliamos as condições relevantes.</p><details><summary>Observações desta etapa</summary><p>Conforme o serviço, podem ser analisadas plantas, documentos, características da instalação e informações obtidas em vistoria técnica contratada.</p></details></div></article><article class="timeline-step"><span class="timeline-number">03</span><div><h4>Desenvolvimento técnico</h4><p>Elaboramos o projeto, laudo ou parecer conforme o escopo contratado.</p><details><summary>Observações desta etapa</summary><p>O desenvolvimento considera os requisitos aplicáveis, as normas pertinentes e as condições específicas informadas ou verificadas.</p></details></div></article><article class="timeline-step"><span class="timeline-number">04</span><div><h4>Entrega</h4><p>Apresentamos a documentação técnica e esclarecemos os pontos do trabalho.</p><details><summary>Observações desta etapa</summary><p>A entrega contempla os documentos previstos na proposta e no escopo contratado. Não inclui fiscalização ou acompanhamento contínuo da execução da obra.</p></details></div></article></div><h3 class="subsection-title values-heading">Missão, visão e valores</h3><div class="identity-grid"><article class="identity-card"><span class="identity-kicker">01 · PROPÓSITO</span><h4>Missão</h4><p>Desenvolver projetos elétricos e eletrônicos e realizar vistorias e perícias com responsabilidade, clareza e rigor técnico, contribuindo para instalações mais seguras e decisões bem fundamentadas.</p></article><article class="identity-card"><span class="identity-kicker">02 · DIREÇÃO</span><h4>Visão</h4><p>Ser reconhecida em todo o Brasil pela qualidade técnica, confiabilidade e excelência na elaboração de projetos elétricos e eletrônicos e na realização de vistorias e perícias, mantendo uma relação próxima e transparente com cada cliente.</p></article><article class="identity-card identity-values"><span class="identity-kicker">03 · PRINCÍPIOS</span><h4>Valores</h4><div class="values-grid"><div><b>Segurança</b><span>Critério técnico para proteger pessoas e patrimônio.</span></div><div><b>Clareza</b><span>Informações e documentos objetivos e compreensíveis.</span></div><div><b>Proximidade</b><span>Contato direto e comunicação transparente.</span></div><div><b>Tecnologia</b><span>Uso criterioso de ferramentas e soluções atuais.</span></div><div><b>Empatia</b><span>Escuta, respeito e atenção às necessidades de cada cliente.</span></div></div></article></div></div>
 </section>
 <section class="tint" id="servicos">
 <div class="wrap">
@@ -358,22 +362,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 </div></div><!-- /projects-layout -->
 </div>
 </section>
-<section class="lt" id="sobre">
-<div class="wrap"><div class="eyebrow">Sobre a TMT</div><h2>Engenharia com proximidade e rigor técnico</h2><p class="lead"><span class="desktop-copy">A TMT Engenharia desenvolve projetos elétricos e eletrônicos e realiza vistorias técnicas e perícias de engenharia. Cada trabalho é conduzido diretamente pelo engenheiro responsável, com comunicação clara, análise técnica criteriosa e soluções adequadas à necessidade apresentada.</span><span class="mobile-copy">Projetos elétricos e eletrônicos, vistorias e perícias com contato direto com o engenheiro responsável.</span></p><h3 class="subsection-title">Como conduzimos cada trabalho</h3><div class="project-timeline"><article class="timeline-step"><span class="timeline-number">01</span><div><h4>Conversa inicial</h4><p>Entendemos a necessidade, o objetivo e as informações disponíveis.</p><details><summary>Observações desta etapa</summary><p>São definidos o tipo de serviço, a finalidade do trabalho, os documentos necessários e os limites iniciais do escopo.</p></details></div></article><article class="timeline-step"><span class="timeline-number">02</span><div><h4>Levantamento e análise</h4><p>Organizamos os dados técnicos e avaliamos as condições relevantes.</p><details><summary>Observações desta etapa</summary><p>Conforme o serviço, podem ser analisadas plantas, documentos, características da instalação e informações obtidas em vistoria técnica contratada.</p></details></div></article><article class="timeline-step"><span class="timeline-number">03</span><div><h4>Desenvolvimento técnico</h4><p>Elaboramos o projeto, laudo ou parecer conforme o escopo contratado.</p><details><summary>Observações desta etapa</summary><p>O desenvolvimento considera os requisitos aplicáveis, as normas pertinentes e as condições específicas informadas ou verificadas.</p></details></div></article><article class="timeline-step"><span class="timeline-number">04</span><div><h4>Entrega</h4><p>Apresentamos a documentação técnica e esclarecemos os pontos do trabalho.</p><details><summary>Observações desta etapa</summary><p>A entrega contempla os documentos previstos na proposta e no escopo contratado. Não inclui fiscalização ou acompanhamento contínuo da execução da obra.</p></details></div></article></div><h3 class="subsection-title values-heading">Missão, visão e valores</h3><div class="identity-grid"><article class="identity-card"><span class="identity-kicker">01 · PROPÓSITO</span><h4>Missão</h4><p>Desenvolver projetos elétricos e eletrônicos e realizar vistorias e perícias com responsabilidade, clareza e rigor técnico, contribuindo para instalações mais seguras e decisões bem fundamentadas.</p></article><article class="identity-card"><span class="identity-kicker">02 · DIREÇÃO</span><h4>Visão</h4><p>Ser reconhecida em todo o Brasil pela qualidade técnica, confiabilidade e excelência na elaboração de projetos elétricos e eletrônicos e na realização de vistorias e perícias, mantendo uma relação próxima e transparente com cada cliente.</p></article><article class="identity-card identity-values"><span class="identity-kicker">03 · PRINCÍPIOS</span><h4>Valores</h4><div class="values-grid"><div><b>Segurança</b><span>Critério técnico para proteger pessoas e patrimônio.</span></div><div><b>Clareza</b><span>Informações e documentos objetivos e compreensíveis.</span></div><div><b>Proximidade</b><span>Contato direto e comunicação transparente.</span></div><div><b>Tecnologia</b><span>Uso criterioso de ferramentas e soluções atuais.</span></div><div><b>Empatia</b><span>Escuta, respeito e atenção às necessidades de cada cliente.</span></div></div></article></div></div>
-</section>
-<section class="dark" id="responsavel">
-<div class="wrap rt">
-<div class="foto"><img alt="Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia" height="480" loading="lazy" src="assets/vitor.jpg" width="480"/></div>
-<div class="t">
-<div class="eyebrow">Responsável técnico</div>
-<h2>Vitor Thimóteo Daubermann</h2>
-<p><b>Engenheiro Eletrônico</b></p>
-<span class="crea">CREA-PR 232367</span>
-<p>Vitor é o responsável técnico da TMT Engenharia e conduz pessoalmente os trabalhos contratados. Atua no desenvolvimento de projetos elétricos e eletrônicos e na realização de vistorias técnicas e perícias de engenharia.</p>
-</div>
-</div>
-</section>
-<section id="parcerias">
+<section class="tint" id="parcerias">
 <div class="wrap">
 <div class="eyebrow">Parcerias</div>
 <h2>Terceirize seus projetos com a TMT</h2>
@@ -409,6 +398,18 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 <!-- Elfsight Google Reviews | Untitled Google Reviews -->
 <script async src="https://elfsightcdn.com/platform.js"></script>
 <div class="elfsight-app-f1d5e788-32c8-4ea9-adb0-815481439b15" data-elfsight-app-lazy=""></div>
+</div>
+</section>
+<section class="dark" id="responsavel">
+<div class="wrap rt">
+<div class="foto"><img alt="Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia" height="480" loading="lazy" src="assets/vitor.jpg" width="480"/></div>
+<div class="t">
+<div class="eyebrow">Responsável técnico</div>
+<h2>Vitor Thimóteo Daubermann</h2>
+<p><b>Engenheiro Eletrônico</b></p>
+<span class="crea">CREA-PR 232367</span>
+<p>Vitor é o responsável técnico da TMT Engenharia e conduz pessoalmente os trabalhos contratados. Atua no desenvolvimento de projetos elétricos e eletrônicos e na realização de vistorias técnicas e perícias de engenharia.</p>
+</div>
 </div>
 </section>
 <section class="dark" id="contato">
