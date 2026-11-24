@@ -153,6 +153,26 @@ h3{color:var(--navy);font-weight:700}
 .rt .t p b{color:#fff}
 .crea{display:inline-block;margin-bottom:16px;padding:5px 14px;border-radius:4px;background:var(--teal);font-size:.88rem;font-weight:700;letter-spacing:1px;color:#fff}
 
+/* ============ 9b. PARCERIAS ============ */
+.partner-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.partner-card{padding:24px;border:1px solid var(--line);border-top:4px solid var(--teal);border-radius:6px;background:#fff;box-shadow:0 5px 18px rgba(15,42,90,.05)}
+.partner-card small{display:block;margin-bottom:6px;font-size:.8rem;font-weight:800;letter-spacing:.08em;color:var(--teal-ink)}
+.partner-card h3{margin-bottom:8px;font-size:1.05rem;line-height:1.3}
+.partner-card p{font-size:.95rem;line-height:1.6;color:var(--ink-soft)}
+.partner-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap);margin-top:var(--gap)}
+.partner-box{padding:clamp(20px,3vw,28px);border-radius:var(--radius);background:var(--bg-soft)}
+.partner-box h3{margin-bottom:14px;font-size:1.1rem}
+.partner-tags{display:flex;flex-wrap:wrap;gap:8px}
+.partner-tags li{padding:6px 14px;border:1px solid #B9DCD7;border-radius:999px;background:#fff;font-size:.88rem;font-weight:600;color:var(--navy)}
+.partner-list{display:grid;gap:8px}
+.partner-list li{position:relative;padding-left:18px;font-size:.95rem;color:var(--navy)}
+.partner-list li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+.partner-note{margin-top:14px;font-size:.85rem;color:var(--ink-soft)}
+.partner-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-top:var(--gap);padding:clamp(22px,3vw,32px);border-top:4px solid var(--teal);border-radius:var(--radius);background:var(--navy)}
+.partner-cta h3{margin-bottom:6px;font-size:clamp(1.15rem,1rem + .6vw,1.35rem);color:#fff}
+.partner-cta p{max-width:620px;color:#E0E9F4}
+.partner-cta :focus-visible{outline-color:var(--mint)}
+
 /* ============ 10. AVALIACOES ============ */
 #avaliacoes{padding-bottom:clamp(24px,4vw,40px)}
 #avaliacoes .lead{margin-bottom:24px}
@@ -189,18 +209,25 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
   .proj{grid-template-columns:minmax(0,1fr) minmax(220px,.95fr);gap:32px}
 }
 
+/* ============ 13b. MENU RECOLHIDO (< 992px) ============ */
+@media(max-width:991.98px){
+  .lang{margin-left:auto}
+  .menu-btn{display:block}
+  .site-nav .wrap>ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 10px 20px rgba(0,0,0,.25)}
+  .site-nav.open .wrap>ul{display:flex}
+  .site-nav ul li+li{border-top:1px solid rgba(255,255,255,.08)}
+  .site-nav a.l{display:block;padding:16px 20px;font-size:1rem}
+}
+
 /* ============ 14. CELULAR (< 768px) ============ */
 @media(max-width:767.98px){
   body{font-size:.97rem;line-height:1.6}
   .mobile-copy{display:inline}.desktop-copy{display:none}
   .site-nav .wrap{gap:8px;height:56px}
   .site-nav .brand{font-size:.9rem}
-  .lang{margin-left:auto}
-  .menu-btn{display:block;width:36px;height:36px}
-  .site-nav .wrap>ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--navy);border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 10px 20px rgba(0,0,0,.25)}
-  .site-nav.open .wrap>ul{display:flex}
-  .site-nav ul li+li{border-top:1px solid rgba(255,255,255,.08)}
-  .site-nav a.l{display:block;padding:16px 20px;font-size:1rem}
+  .menu-btn{width:36px;height:36px}
+  .partner-cols{grid-template-columns:1fr}
+  .partner-cta .btn-cta{display:block;width:100%;text-align:center}
   .hero .logo{width:150px;margin:0 auto;padding:14px}
   .hero p{margin-bottom:24px}
   .chips span{padding:5px 10px;font-size:.78rem}
@@ -227,6 +254,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 <li><a class="l" href="#servicos">Serviços</a></li>
 <li><a class="l" href="#projetos">Projetos</a></li>
 <li><a class="l" href="#sobre">Sobre</a></li>
+<li><a class="l" href="#parcerias">Parcerias</a></li>
 <li><a class="l" href="#avaliacoes">Avaliações</a></li>
 <li><a class="l" href="#contato">Contato</a></li>
 </ul>
@@ -345,6 +373,34 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
 </div>
 </div>
 </section>
+<section id="parcerias">
+<div class="wrap">
+<div class="eyebrow">Parcerias</div>
+<h2>Terceirize seus projetos com a TMT</h2>
+<p class="lead">Para empresas que precisam de projetos elétricos e eletrônicos sem manter uma equipe de projeto própria. A TMT atua como sua parceira técnica, dentro do nosso escopo, com a mesma dedicação de um trabalho direto.</p>
+<div class="grid partner-grid">
+<div class="partner-card"><small>01</small><h3>Demanda sob medida</h3><p>Você contrata conforme a necessidade de cada obra, sem custo fixo de equipe.</p></div>
+<div class="partner-card"><small>02</small><h3>Responsabilidade técnica</h3><p>Cada projeto é desenvolvido e assinado pelo engenheiro responsável, com registro no CREA.</p></div>
+<div class="partner-card"><small>03</small><h3>Seu padrão de entrega</h3><p>Os desenhos podem seguir os carimbos, templates e padrões de documentação da sua empresa.</p></div>
+<div class="partner-card"><small>04</small><h3>Confidencialidade</h3><p>O relacionamento com o cliente final continua com você, e as informações de cada obra são tratadas com sigilo.</p></div>
+</div>
+<div class="partner-cols">
+<div class="partner-box">
+<h3>Para quem é</h3>
+<ul class="partner-tags"><li>Escritórios de arquitetura</li><li>Construtoras e incorporadoras</li><li>Escritórios de engenharia</li><li>Montadoras de painéis</li><li>Integradores de energia solar</li><li>Empresas de instalações elétricas</li></ul>
+</div>
+<div class="partner-box">
+<h3>O que pode ser terceirizado</h3>
+<ul class="partner-list"><li>Instalações elétricas prediais e comerciais</li><li>Elétrica industrial</li><li>Subestações em média tensão</li><li>SPDA (para-raios)</li><li>Painéis de comando e potência</li><li>Automação residencial</li><li>Vistorias técnicas e perícias</li></ul>
+<p class="partner-note">A parceria não inclui fiscalização nem acompanhamento contínuo da execução de obras.</p>
+</div>
+</div>
+<div class="partner-cta">
+<div><h3>Vamos firmar uma parceria?</h3><p>Conte como é a demanda da sua empresa e definimos juntos o melhor formato de trabalho.</p></div>
+<a class="btn-cta" data-wa="parceria" href="https://wa.me/5545988239581?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20TMT%20Engenharia%20e%20gostaria%20de%20conversar%20sobre%20uma%20parceria%20para%20terceiriza%C3%A7%C3%A3o%20de%20projetos." rel="noopener" target="_blank">Quero ser parceiro</a>
+</div>
+</div>
+</section>
 <section class="lt" id="avaliacoes">
 <div class="wrap">
 <div class="eyebrow">Avaliações</div>
@@ -386,7 +442,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
     nav.querySelectorAll('ul a').forEach(function(a){a.addEventListener('click',function(){set(false)})});
     document.addEventListener('click',function(e){if(!nav.contains(e.target))set(false)});
     document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
-    window.addEventListener('resize',function(){if(window.innerWidth>767)set(false)});
+    window.addEventListener('resize',function(){if(window.innerWidth>991)set(false)});
   }
 })();
 (function(){
@@ -672,6 +728,34 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
      `Vitor es el responsable técnico de TMT Engenharia y acompaña personalmente cada proyecto. Actúa en instalaciones eléctricas de edificios, eléctrica industrial, subestaciones, SPDA, tableros de control y potencia, automatización residencial, peritajes, inspecciones y consultorías.`],
     [`Vitor Thimóteo Daubermann, responsável técnico da TMT Engenharia`, `Vitor Thimóteo Daubermann, responsible engineer at TMT Engenharia`, `Vitor Thimóteo Daubermann, responsable técnico de TMT Engenharia`],
 
+    // Parcerias
+    [`Parcerias`, `Partnerships`, `Alianzas`],
+    [`Terceirize seus projetos com a TMT`, `Outsource your designs to TMT`, `Subcontrate sus proyectos con TMT`],
+    [`Para empresas que precisam de projetos elétricos e eletrônicos sem manter uma equipe de projeto própria. A TMT atua como sua parceira técnica, dentro do nosso escopo, com a mesma dedicação de um trabalho direto.`,
+     `For companies that need electrical and electronic designs without keeping an in-house design team. TMT works as your technical partner, within our scope, with the same dedication as a direct assignment.`,
+     `Para empresas que necesitan proyectos eléctricos y electrónicos sin mantener un equipo de proyectos propio. TMT actúa como su aliada técnica, dentro de nuestro alcance, con la misma dedicación de un trabajo directo.`],
+    [`Demanda sob medida`, `On-demand capacity`, `Demanda a la medida`],
+    [`Você contrata conforme a necessidade de cada obra, sem custo fixo de equipe.`, `You hire according to each project's needs, with no fixed team costs.`, `Usted contrata según la necesidad de cada obra, sin costo fijo de equipo.`],
+    [`Responsabilidade técnica`, `Technical responsibility`, `Responsabilidad técnica`],
+    [`Cada projeto é desenvolvido e assinado pelo engenheiro responsável, com registro no CREA.`, `Each design is developed and signed by the engineer in charge, registered with CREA.`, `Cada proyecto es desarrollado y firmado por el ingeniero responsable, con registro en el CREA.`],
+    [`Seu padrão de entrega`, `Your delivery standards`, `Su estándar de entrega`],
+    [`Os desenhos podem seguir os carimbos, templates e padrões de documentação da sua empresa.`, `Drawings can follow your company's title blocks, templates and documentation standards.`, `Los planos pueden seguir los cajetines, plantillas y estándares de documentación de su empresa.`],
+    [`Confidencialidade`, `Confidentiality`, `Confidencialidad`],
+    [`O relacionamento com o cliente final continua com você, e as informações de cada obra são tratadas com sigilo.`, `The relationship with the end client stays with you, and each project's information is kept confidential.`, `La relación con el cliente final sigue siendo suya, y la información de cada obra se trata con confidencialidad.`],
+    [`Para quem é`, `Who it's for`, `Para quién es`],
+    [`Escritórios de arquitetura`, `Architecture firms`, `Despachos de arquitectura`],
+    [`Construtoras e incorporadoras`, `Builders and developers`, `Constructoras y desarrolladoras`],
+    [`Escritórios de engenharia`, `Engineering firms`, `Despachos de ingeniería`],
+    [`Montadoras de painéis`, `Panel builders`, `Fabricantes de tableros`],
+    [`Integradores de energia solar`, `Solar energy integrators`, `Integradores de energía solar`],
+    [`Empresas de instalações elétricas`, `Electrical contractors`, `Empresas de instalaciones eléctricas`],
+    [`O que pode ser terceirizado`, `What can be outsourced`, `Qué se puede subcontratar`],
+    [`Instalações elétricas prediais e comerciais`, `Building and commercial electrical installations`, `Instalaciones eléctricas de edificios y comerciales`],
+    [`A parceria não inclui fiscalização nem acompanhamento contínuo da execução de obras.`, `The partnership does not include construction supervision or continuous site monitoring.`, `La alianza no incluye supervisión ni seguimiento continuo de la ejecución de obras.`],
+    [`Vamos firmar uma parceria?`, `Shall we partner up?`, `¿Formamos una alianza?`],
+    [`Conte como é a demanda da sua empresa e definimos juntos o melhor formato de trabalho.`, `Tell us about your company's demand and we'll define the best way to work together.`, `Cuéntenos cómo es la demanda de su empresa y definimos juntos el mejor formato de trabajo.`],
+    [`Quero ser parceiro`, `Become a partner`, `Quiero ser aliado`],
+
     // Avaliações
     [`O que nossos clientes dizem`, `What our clients say`, `Lo que dicen nuestros clientes`],
     [`Avaliações reais de clientes no Google.`, `Real client reviews on Google.`, `Reseñas reales de clientes en Google.`],
@@ -718,6 +802,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
       desc: 'TMT Engenharia, in Cascavel/PR, serves clients throughout the Americas with electrical design, substations, SPDA (lightning protection), control and power panels, home automation, expert reports and inspections.',
       og: 'Electrical design, substations, SPDA, control panels and expert reports, with direct service from the engineer in charge.',
       wa: 'Hello, I found you through the TMT Engenharia website and would like a quote.',
+      wap: 'Hello, I found you through the TMT Engenharia website and would like to talk about a partnership to outsource designs.',
       mail: 'Quote request - TMT Engenharia', html: 'en'
     },
     es: {
@@ -725,6 +810,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
       desc: 'TMT Engenharia, en Cascavel/PR, atiende en toda América con proyectos eléctricos, subestaciones, SPDA (pararrayos), tableros de control y potencia, automatización residencial, peritajes e inspecciones.',
       og: 'Proyectos eléctricos, subestaciones, SPDA, tableros de control y peritajes, con atención directa del ingeniero responsable.',
       wa: 'Hola, encontré el sitio web de TMT Engenharia y me gustaría solicitar una cotización.',
+      wap: 'Hola, encontré el sitio web de TMT Engenharia y me gustaría conversar sobre una alianza para subcontratar proyectos.',
       mail: 'Solicitud de cotización - TMT Engenharia', html: 'es-MX'
     }
   };
@@ -741,6 +827,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
     desc: descEl ? descEl.content : '',
     og: ogEl ? ogEl.content : '',
     wa: 'Olá, vim pelo site da TMT Engenharia e gostaria de um orçamento.',
+    wap: 'Olá, vim pelo site da TMT Engenharia e gostaria de conversar sobre uma parceria para terceirização de projetos.',
     mail: 'Orçamento - TMT Engenharia', html: 'pt-BR'
   };
 
@@ -772,7 +859,7 @@ footer{padding:28px 0;background:var(--navy-deep);font-size:.85rem;line-height:1
     if (ogEl) ogEl.content = m.og;
     var ogt = q('meta[property="og:title"]'); if (ogt) ogt.content = 'TMT Engenharia Elétrica';
     Array.prototype.forEach.call(document.querySelectorAll('a[href^="https://wa.me/"]'), function (a) {
-      a.href = a.href.split('?')[0] + '?text=' + encodeURIComponent(m.wa);
+      a.href = a.href.split('?')[0] + '?text=' + encodeURIComponent(a.dataset.wa === 'parceria' ? m.wap : m.wa);
     });
     Array.prototype.forEach.call(document.querySelectorAll('a[href^="mailto:"]'), function (a) {
       a.href = a.href.split('?')[0] + '?subject=' + encodeURIComponent(m.mail);
